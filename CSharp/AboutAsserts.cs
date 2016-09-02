@@ -8,7 +8,7 @@ namespace DotNetKoans.CSharp
         [Koan(1)]
         public void AssertTruth() 
         {
-			Assert.True(false); //This should be true
+            Assert.True(false); //This should be true
         }
 
         //Enlightenment may be more easily achieved with appropriate messages
@@ -24,15 +24,17 @@ namespace DotNetKoans.CSharp
         {
             var expectedValue = 3;
             var actualValue = 1 + 1;
+
             Assert.True(expectedValue == actualValue);
         }
 
-        //Some wasy of asserting equality are better than others
+        //Some ways of asserting equality are better than others
         [Koan(4)]
         public void ABetterWayOfAssertingEquality() 
         {
             var expectedValue = 3;
             var actualValue = 1 + 1;
+
             Assert.Equal(expectedValue, actualValue);
         }
 
