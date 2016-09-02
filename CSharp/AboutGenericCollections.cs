@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace DotNetKoans.CSharp
 {
-	public class AboutGenericContainers : Koan
+	public class AboutGenericCollections : Koan
 	{
 		[Koan(1)]
 		public void ArrayListSizeIsDynamic()

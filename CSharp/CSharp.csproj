@@ -69,11 +69,11 @@
     <Compile Include="AboutAssignment.cs" />
     <Compile Include="AboutControlStatements.cs" />
     <Compile Include="AboutDelegates.cs" />
-    <Compile Include="AboutGenericContainers.cs" />
+    <Compile Include="AboutGenericCollections.cs" />
     <Compile Include="AboutInheritance.cs" />
     <Compile Include="AboutLambdas.cs" />
     <Compile Include="AboutMethods.cs" />
-    <Compile Include="AboutNil.cs" />
+    <Compile Include="AboutNull.cs" />
     <Compile Include="AboutStrings.cs" />
     <Compile Include="PathToEnlightenment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

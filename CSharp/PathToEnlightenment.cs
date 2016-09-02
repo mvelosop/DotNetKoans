@@ -8,9 +8,9 @@
             {
                 return new string[] {
 				"DotNetKoans.CSharp.AboutAsserts",
-				"DotNetKoans.CSharp.AboutNil",
+				"DotNetKoans.CSharp.AboutNull",
 				"DotNetKoans.CSharp.AboutArrays",
-				"DotNetKoans.CSharp.AboutGenericContainers",
+				"DotNetKoans.CSharp.AboutGenericCollections",
 				"DotNetKoans.CSharp.AboutAssignment",
 				"DotNetKoans.CSharp.AboutStrings",
 				"DotNetKoans.CSharp.AboutInheritance",
