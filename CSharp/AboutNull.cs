@@ -34,6 +34,22 @@ namespace DotNetKoans.CSharp
         }
 
         [Koan(3)]
+        public void YouCanNowHandleNullObjectsGracefully()
+        {
+            //By using the C# 6 "Null-conditional operator" you can avoid NullReferenceException
+            //Don't be confused by the code below. It is using Anonymous Delegates which we will
+            //cover later on. 
+            object nothing = null;
+
+            Assert.DoesNotThrow(delegate () { nothing?.ToString(); });
+
+            //What's should "Null-conditional operator" return?
+            object value = nothing?.ToString();
+
+            Assert.Equal(FILL_ME_IN, value);
+        }
+
+        [Koan(4)]
         public void CheckingThatAnObjectIsNull()
         {
             object obj = null;
@@ -41,7 +57,7 @@ namespace DotNetKoans.CSharp
             Assert.True(obj == FILL_ME_IN);
         }
 
-        [Koan(4)]
+        [Koan(5)]
         public void ABetterWayToCheckThatAnObjectIsNull()
         {
             object obj = null;
@@ -49,7 +65,7 @@ namespace DotNetKoans.CSharp
             Assert.Null(FILL_ME_IN);
         }
 
-        [Koan(5)]
+        [Koan(6)]
         public void AWayNotToCheckThatAnObjectIsNull()
         {
             object obj = null;
