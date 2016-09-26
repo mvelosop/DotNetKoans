@@ -10,6 +10,7 @@ namespace DotNetKoans.CSharp
         public void IfThenElseStatementsWithBrackets()
         {
             bool b;
+
             if (true)
             {
                 b = true;
@@ -26,13 +27,13 @@ namespace DotNetKoans.CSharp
         public void IfThenElseStatementsWithoutBrackets()
         {
             bool b;
+
             if(true)
                 b = true;
             else
                 b = false;
 
             Assert.Equal(FILL_ME_IN, b);
-
         }
 
         [Koan(3)]
@@ -69,8 +70,8 @@ namespace DotNetKoans.CSharp
                 b1 = true;
                 b2 = true;
 
-			Assert.Equal(FILL_ME_IN, b1);
-			Assert.Equal(FILL_ME_IN, b2);
+            Assert.Equal(FILL_ME_IN, b1);
+            Assert.Equal(FILL_ME_IN, b2);
         }
 
         [Koan(6)]
@@ -88,8 +89,8 @@ namespace DotNetKoans.CSharp
             //i = null; //You can't do this
 
             int? nullableInt = null; //but you can do this
-			Assert.NotNull(FILL_ME_IN);
-			Assert.Null(FILL_ME_IN);
+            Assert.NotNull(FILL_ME_IN);
+            Assert.Null(FILL_ME_IN);
         }
 
         [Koan(8)]
@@ -131,11 +132,13 @@ namespace DotNetKoans.CSharp
         {
             int i = 1;
             int result = 1;
+
             while (i <= 3)
             {
                 result = result + i;
                 i += 1;
             }
+
             Assert.Equal(FILL_ME_IN, result);
         }
 
@@ -144,12 +147,15 @@ namespace DotNetKoans.CSharp
         {
             int i = 1;
             int result = 1;
+
             while (true)
             {
                 if (i > 3) { break; }
+
                 result = result + i;
                 i += 1;    
             }
+
             Assert.Equal(FILL_ME_IN, result);
         }
 
@@ -158,12 +164,16 @@ namespace DotNetKoans.CSharp
         {
             int i = 0;
             var result = new List<int>();
+
             while(i < 10)
             {
                 i += 1;
+
                 if ((i % 2) == 0) { continue; }
+
                 result.Add(i);
             }
+
             Assert.Equal(FILL_ME_IN, result);
         }
 
@@ -171,10 +181,12 @@ namespace DotNetKoans.CSharp
         public void ForStatement()
         {
             var list = new List<string> { "fish", "and", "chips" };
+
             for (int i = 0; i < list.Count; i++)
             {
                 list[i] = (list[i].ToUpper());
             }
+
             Assert.Equal(FILL_ME_IN, list);
         }
 
@@ -183,10 +195,12 @@ namespace DotNetKoans.CSharp
         {
             var list = new List<string> { "fish", "and", "chips" };
             var finalList = new List<string>();
+
             foreach (string item in list)
             {
                 finalList.Add(item.ToUpper());
             }
+
             Assert.Equal(FILL_ME_IN, list);
             Assert.Equal(FILL_ME_IN, finalList);
         }
@@ -195,6 +209,7 @@ namespace DotNetKoans.CSharp
         public void ModifyingACollectionDuringForEach()
         {
             var list = new List<string> { "fish", "and", "chips" };
+
             try
             {
                 foreach (string item in list)
@@ -214,6 +229,7 @@ namespace DotNetKoans.CSharp
             string whoCaughtTheException = "No one";
 
             var list = new List<string> { "fish", "and", "chips" };
+
             try
             {
                 foreach (string item in list)

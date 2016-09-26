@@ -12,11 +12,11 @@ namespace DotNetKoans.CSharp
         public void CreatingArrays()
         {
             var empty_array = new object[] { };
+
             Assert.Equal(typeof(FillMeIn), empty_array.GetType());
 
             //Note that you have to explicitly check for subclasses
             Assert.True(typeof(Array).IsAssignableFrom(empty_array.GetType()));
-
             Assert.Equal(FILL_ME_IN, empty_array.Length);
         }
 
@@ -25,6 +25,7 @@ namespace DotNetKoans.CSharp
         {
             //You don't have to specify a type if the arguments can be inferred
             var array = new [] { 42 };
+
             Assert.Equal(typeof(int[]), array.GetType());
             Assert.Equal(new int[] { 42 }, array);
 
@@ -41,10 +42,13 @@ namespace DotNetKoans.CSharp
             //which created a new array bigger than the last, copied the elements over, and
             //returned the new array. Or you could do this:
             List<int> dynamicArray = new List<int>();
+
             dynamicArray.Add(42);
+
             Assert.Equal(array, dynamicArray.ToArray());
 
             dynamicArray.Add(13);
+
             Assert.Equal((new int[] { 42, (int)FILL_ME_IN}), dynamicArray.ToArray());
         }
 
@@ -64,8 +68,8 @@ namespace DotNetKoans.CSharp
         {
             var array = new[] { "peanut", "butter", "and", "jelly" };
 
-			Assert.Equal(new string[] { (string)FILL_ME_IN, (string)FILL_ME_IN }, array.Take(2).ToArray());
-			Assert.Equal(new string[] { (string)FILL_ME_IN, (string)FILL_ME_IN }, array.Skip(1).Take(2).ToArray());
+            Assert.Equal(new string[] { (string)FILL_ME_IN, (string)FILL_ME_IN }, array.Take(2).ToArray());
+            Assert.Equal(new string[] { (string)FILL_ME_IN, (string)FILL_ME_IN }, array.Skip(1).Take(2).ToArray());
         }
     }
 }
