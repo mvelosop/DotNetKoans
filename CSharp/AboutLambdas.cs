@@ -5,9 +5,10 @@ using Xunit;
 
 namespace DotNetKoans.CSharp
 {
+    [Trait("Topic", "11 - About Lambdas")]
     public class AboutLambdas : Koan
     {
-        [Koan(1)]
+        [Koan(1, DisplayName = "11.01 - UsingAnonymousMethods")]
         public void UsingAnonymousMethods()
         {
             //The AboutDelegates Koans introduced you to delegates. In all of those koans, 
@@ -26,7 +27,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, result);
         }
 
-        [Koan(2)]
+        [Koan(2, DisplayName = "11.02 - AnonymousMethodsCanAccessOuterVariables")]
         public void AnonymousMethodsCanAccessOuterVariables()
         {
             //Anonymous methods can access variable defined in the scope of the method where they are defined.
@@ -40,7 +41,7 @@ namespace DotNetKoans.CSharp
                 }));
         }
 
-        [Koan(3)]
+        [Koan(3, DisplayName = "11.03 - AccessEvenAfterVariableIsOutOfScope")]
         public void AccessEvenAfterVariableIsOutOfScope()
         {
             Predicate<int> criteria;
@@ -61,7 +62,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, Array.FindIndex(numbers, criteria));
         }
 
-        [Koan(4)]
+        [Koan(4, DisplayName = "11.04 - LambdaExpressionsAreShorthand")]
         public void LambdaExpressionsAreShorthand()
         {
             var numbers = new[] { 1, 2, 3, 4 };
@@ -88,7 +89,7 @@ namespace DotNetKoans.CSharp
             //code with a peer, you would say "x going into..."
         }
 
-        [Koan(5)]
+        [Koan(5, DisplayName = "11.05 - TypeCanBeInferred")]
         public void TypeCanBeInferred()
         {
             //Fortunately the above form of a Lambda is the most verbose form. 
@@ -110,7 +111,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, anonymous);
         }
 
-        [Koan(6)]
+        [Koan(6, DisplayName = "11.06 - ParensNotNeededOnSingleParemeterLambdas")]
         public void ParensNotNeededOnSingleParemeterLambdas()
         {
             var numbers = new[] { 1, 2, 3, 4 };
@@ -131,7 +132,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, anonymous);
         }
 
-        [Koan(7)]
+        [Koan(7, DisplayName = "11.07 - BlockNotNeededOnSingleStatementLambdas")]
         public void BlockNotNeededOnSingleStatementLambdas()
         {
             var numbers = new[] { 1, 2, 3, 4 };

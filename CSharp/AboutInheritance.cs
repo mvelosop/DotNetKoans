@@ -2,6 +2,7 @@ using Xunit;
 
 namespace DotNetKoans.CSharp
 {
+    [Trait("Topic", "07 - About Inheritance")]
     public class AboutInheritance : Koan
     {
         public class Dog
@@ -53,19 +54,19 @@ namespace DotNetKoans.CSharp
             }
         }
 
-        [Koan(1)]
+        [Koan(1, DisplayName = "07.01 - SubclassesHaveTheParentAsAnAncestor")]
         public void SubclassesHaveTheParentAsAnAncestor()
         {
             Assert.True(typeof(FillMeIn).IsAssignableFrom(typeof(Chihuahua)));
         }
 
-        [Koan(2)]
+        [Koan(2, DisplayName = "07.02 - AllClassesUltimatelyInheritFromAnObject")]
         public void AllClassesUltimatelyInheritFromAnObject()
         {
             Assert.True(typeof(FillMeIn).IsAssignableFrom(typeof(Chihuahua)));
         }
 
-        [Koan(3)]
+        [Koan(3, DisplayName = "07.03 - SubclassesInheritBehaviorFromParentClass")]
         public void SubclassesInheritBehaviorFromParentClass()
         {
             var chico = new Chihuahua("Chico");
@@ -73,7 +74,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, chico.Name);
         }
 
-        [Koan(4)]
+        [Koan(4, DisplayName = "07.04 - SubclassesAddNewBehavior")]
         public void SubclassesAddNewBehavior()
         {
             var chico = new Chihuahua("Chico");
@@ -91,7 +92,7 @@ namespace DotNetKoans.CSharp
             Assert.Null(dog.GetType().GetMethod("Wag"));
         }
 
-        [Koan(5)]
+        [Koan(5, DisplayName = "07.05 - SubclassesCanModifyExistingBehavior")]
         public void SubclassesCanModifyExistingBehavior()
         {
             var chico = new Chihuahua("Chico");
@@ -124,7 +125,7 @@ namespace DotNetKoans.CSharp
             }
         }
 
-        [Koan(6)]
+        [Koan(6, DisplayName = "07.06 - SubclassesCanRedefineBehaviorThatIsNotVirtual")]
         public void SubclassesCanRedefineBehaviorThatIsNotVirtual()
         {
             ReallyYippyChihuahua suzie = new ReallyYippyChihuahua("Suzie");
@@ -132,7 +133,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, suzie.Wag());
         }
 
-        [Koan(7)]
+        [Koan(7, DisplayName = "07.07 - NewingAMethodDoesNotChangeTheBaseBehavior")]
         public void NewingAMethodDoesNotChangeTheBaseBehavior()
         {
             //This is vital to understand. In Koan 6, you saw that the Wag
@@ -157,7 +158,7 @@ namespace DotNetKoans.CSharp
             }
         }
 
-        [Koan(8)]
+        [Koan(8, DisplayName = "07.08 - SubclassesCanInvokeParentBehaviorUsingBase")]
         public void SubclassesCanInvokeParentBehaviorUsingBase()
         {
             var ralph = new BullDog("Ralph");
@@ -175,7 +176,7 @@ namespace DotNetKoans.CSharp
             }
         }
 
-        [Koan(9)]
+        [Koan(9, DisplayName = "07.09 - YouCanCallBaseEvenFromOtherMethods")]
         public void YouCanCallBaseEvenFromOtherMethods()
         {
             var george = new GreatDane("George");
