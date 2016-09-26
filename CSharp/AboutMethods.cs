@@ -99,8 +99,11 @@ namespace DotNetKoans.CSharp
         class InnerSecret
         {
             public static string Key() { return "Key"; }
+
             public string Secret() { return "Secret"; }
+
             protected string SuperSecret() { return "This is secret"; }
+
             private string TopSecret() { return "No one will find me!"; }
         }
 
@@ -111,6 +114,7 @@ namespace DotNetKoans.CSharp
 
         //Static methods don't require an instance of the object
         //in order to be called. 
+
         [Koan(7)]
         public void CallingStaticMethodsWithoutAnInstance()
         {
@@ -122,11 +126,11 @@ namespace DotNetKoans.CSharp
         //InnerSecret secret = new InnerSecret();
         //Assert.Equal(FILL_ME_IN, secret.Key());
 
-        
         [Koan(8)]
         public void CallingPublicMethodsOnAnInstance()
         {
             InnerSecret secret = new InnerSecret();
+
             Assert.Equal(FILL_ME_IN, secret.Secret());
         }
 
@@ -134,10 +138,12 @@ namespace DotNetKoans.CSharp
         //We're going to call the public method called
         //InformationLeak of the StateSecret class which returns
         //the value from the protected method SuperSecret
+
         [Koan(9)]
         public void CallingProtectedMethodsOnAnInstance()
         {
             StateSecret secret = new StateSecret();
+
             Assert.Equal(FILL_ME_IN, secret.InformationLeak());
         }
 
@@ -148,13 +154,16 @@ namespace DotNetKoans.CSharp
         //Ok, well, that isn't entirely true. Reflection can get
         //you just about anything, and though it's way out of scope
         //for this...
+
         [Koan(10)]
         public void SubvertPrivateMethods()
         {
             InnerSecret secret = new InnerSecret();
+
             string superSecretMessage = secret.GetType()
                 .GetMethod("TopSecret", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
                 .Invoke(secret, null) as string;
+
             Assert.Equal(FILL_ME_IN, superSecretMessage);
         }
 
