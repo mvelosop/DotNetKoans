@@ -43,7 +43,6 @@ namespace DotNetKoans.CSharp
 
             Assert.DoesNotThrow(delegate () { nothing?.ToString(); });
 
-            //What's should "Null-conditional operator" return?
             object value = nothing?.ToString();
 
             Assert.Equal(FILL_ME_IN, value);
