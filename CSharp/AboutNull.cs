@@ -3,15 +3,16 @@ using Xunit;
 
 namespace DotNetKoans.CSharp
 {
+    [Trait("Topic", "02 - About Null")]
     public class AboutNull : Koan
     {
-        [Koan(1)]
+        [Koan(1, DisplayName = "02.01 - NullIsNotAnObject")]
         public void NullIsNotAnObject()
         {
             Assert.True(typeof(object).IsAssignableFrom(null)); //not everything is an object
         }
 
-        [Koan(2)]
+        [Koan(2, DisplayName = "02.02 - YouGetNullPointerErrorsWhenCallingMethodsOnNull")]
         public void YouGetNullPointerErrorsWhenCallingMethodsOnNull()
         {
             //What is the Exception that is thrown when you call a method on a null object?
@@ -33,7 +34,7 @@ namespace DotNetKoans.CSharp
             }
         }
 
-        [Koan(3)]
+        [Koan(3, DisplayName = "02.03 - YouCanNowHandleNullObjectsGracefully")]
         public void YouCanNowHandleNullObjectsGracefully()
         {
             //By using the C# 6 "Null-conditional operator" you can avoid NullReferenceException
@@ -48,7 +49,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, value);
         }
 
-        [Koan(4)]
+        [Koan(4, DisplayName = "02.04 - CheckingThatAnObjectIsNull")]
         public void CheckingThatAnObjectIsNull()
         {
             object obj = null;
@@ -56,7 +57,7 @@ namespace DotNetKoans.CSharp
             Assert.True(obj == FILL_ME_IN);
         }
 
-        [Koan(5)]
+        [Koan(5, DisplayName = "02.05 - ABetterWayToCheckThatAnObjectIsNull")]
         public void ABetterWayToCheckThatAnObjectIsNull()
         {
             object obj = null;
@@ -64,7 +65,7 @@ namespace DotNetKoans.CSharp
             Assert.Null(FILL_ME_IN);
         }
 
-        [Koan(6)]
+        [Koan(6, DisplayName = "02.06 - AWayNotToCheckThatAnObjectIsNull")]
         public void AWayNotToCheckThatAnObjectIsNull()
         {
             object obj = null;

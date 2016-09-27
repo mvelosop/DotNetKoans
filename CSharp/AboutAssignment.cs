@@ -6,6 +6,7 @@ using System.Linq;
 
 namespace DotNetKoans.CSharp
 {
+    [Trait("Topic", "05 - About Assignment")]
     public class AboutAssignment : Koan
     {
         //Parallel Assignments are a feature in Ruby which allow one
@@ -15,7 +16,7 @@ namespace DotNetKoans.CSharp
         //This isn't available in C#, but there are a few interesting assignment
         //tricks we can pick up.
 
-        [Koan(1)]
+        [Koan(1, DisplayName = "05.01 - ImplicitAssignment")]
         public void ImplicitAssignment()
         {
             //Even though we don't specify types explicitly, the compiler
@@ -31,7 +32,7 @@ namespace DotNetKoans.CSharp
             //name = 42;
         }
 
-        [Koan(2)]
+        [Koan(2, DisplayName = "05.02 - ImplicitArrayAssignmentWithSameTypes")]
         public void ImplicitArrayAssignmentWithSameTypes()
         {
             //Even though we don't specify types explicitly, the compiler
@@ -44,7 +45,7 @@ namespace DotNetKoans.CSharp
             //var array = new[] { "John", 1 };
         }
 
-        [Koan(3)]
+        [Koan(3, DisplayName = "05.03 - MultipleAssignmentsOnSingleLine")]
         public void MultipleAssignmentsOnSingleLine()
         {
             //You can do multiple assignments on one line, but you 

@@ -4,9 +4,10 @@ using Xunit;
 
 namespace DotNetKoans.CSharp
 {
+    [Trait("Topic", "09 - About Control Statements")]
     public class AboutControlStatements : Koan
     {
-        [Koan(1)]
+        [Koan(1, DisplayName = "09.01 - IfThenElseStatementsWithBrackets")]
         public void IfThenElseStatementsWithBrackets()
         {
             bool b;
@@ -23,7 +24,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, b);
         }
 
-        [Koan(2)]
+        [Koan(2, DisplayName = "09.02 - IfThenElseStatementsWithoutBrackets")]
         public void IfThenElseStatementsWithoutBrackets()
         {
             bool b;
@@ -36,7 +37,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, b);
         }
 
-        [Koan(3)]
+        [Koan(3, DisplayName = "09.03 - IfThenStatementsWithBrackets")]
         public void IfThenStatementsWithBrackets()
         {
             bool b = false;
@@ -48,7 +49,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, b);
         }
 
-        [Koan(4)]
+        [Koan(4, DisplayName = "09.04 - IfThenStatementsWithoutBrackets")]
         public void IfThenStatementsWithoutBrackets()
         {
             bool b = false;
@@ -58,7 +59,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, b);
         }
 
-        [Koan(5)]
+        [Koan(5, DisplayName = "09.05 - WhyItsWiseToAlwaysUseBrackets")]
         public void WhyItsWiseToAlwaysUseBrackets()
         {
             bool b1 = false;
@@ -74,7 +75,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, b2);
         }
 
-        [Koan(6)]
+        [Koan(6, DisplayName = "09.06 - TernaryOperators")]
         public void TernaryOperators()
         {
             Assert.Equal(FILL_ME_IN, (true ? 1 : 0));
@@ -82,7 +83,7 @@ namespace DotNetKoans.CSharp
         }
 
         //This is out of place for control statements, but necessary for Koan 8
-        [Koan(7)]
+        [Koan(7, DisplayName = "09.07 - NullableTypes")]
         public void NullableTypes()
         {
             int i = 0;
@@ -93,7 +94,7 @@ namespace DotNetKoans.CSharp
             Assert.Null(FILL_ME_IN);
         }
 
-        [Koan(8)]
+        [Koan(8, DisplayName = "09.08 - AssignIfNullOperator")]
         public void AssignIfNullOperator()
         {
             int? nullableInt = null;
@@ -103,7 +104,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, x);
         }
 
-        [Koan(9)]
+        [Koan(9, DisplayName = "09.09 - IsOperators")]
         public void IsOperators()
         {
             bool isKoan = false;
@@ -127,7 +128,7 @@ namespace DotNetKoans.CSharp
 
         }
 
-        [Koan(10)]
+        [Koan(10, DisplayName = "09.10 - WhileStatement")]
         public void WhileStatement()
         {
             int i = 1;
@@ -142,7 +143,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, result);
         }
 
-        [Koan(11)]
+        [Koan(11, DisplayName = "09.11 - BreakStatement")]
         public void BreakStatement()
         {
             int i = 1;
@@ -159,7 +160,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, result);
         }
 
-        [Koan(12)]
+        [Koan(12, DisplayName = "09.12 - ContinueStatement")]
         public void ContinueStatement()
         {
             int i = 0;
@@ -177,7 +178,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, result);
         }
 
-        [Koan(13)]
+        [Koan(13, DisplayName = "09.13 - ForStatement")]
         public void ForStatement()
         {
             var list = new List<string> { "fish", "and", "chips" };
@@ -190,7 +191,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, list);
         }
 
-        [Koan(14)]
+        [Koan(14, DisplayName = "09.14 - ForEachStatement")]
         public void ForEachStatement()
         {
             var list = new List<string> { "fish", "and", "chips" };
@@ -205,7 +206,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, finalList);
         }
 
-        [Koan(15)]
+        [Koan(15, DisplayName = "09.15 - ModifyingACollectionDuringForEach")]
         public void ModifyingACollectionDuringForEach()
         {
             var list = new List<string> { "fish", "and", "chips" };
@@ -223,7 +224,7 @@ namespace DotNetKoans.CSharp
             }
         }
 
-        [Koan(16)]
+        [Koan(16, DisplayName = "09.16 - CatchingModificationExceptions")]
         public void CatchingModificationExceptions()
         {
             string whoCaughtTheException = "No one";
