@@ -71,6 +71,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssertHelpers.cs" />
     <Compile Include="IAmThePathToEnlightenment.cs" />
     <Compile Include="Koan.cs" />
     <Compile Include="KoanAttribute.cs" />

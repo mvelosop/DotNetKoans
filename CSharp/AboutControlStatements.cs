@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using Xunit;
 
+using Assert = Xunit.KoanHelpers.Assert;
+
 namespace DotNetKoans.CSharp
 {
     [Trait("Topic", "09 - About Control Statements")]

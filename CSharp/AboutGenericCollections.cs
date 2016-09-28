@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using Xunit;
 using System.Linq;
 
+using Assert = Xunit.KoanHelpers.Assert;
+
 namespace DotNetKoans.CSharp
 {
 	[Trait("Topic", "04 - About Generic Collections")]
@@ -159,7 +161,7 @@ namespace DotNetKoans.CSharp
 			List<int> list = new List<int> { 1, 2, 3 };
 
 			//You cannot attempt to get data that doesn't exist
-			Assert.Throws(typeof(FillMeIn), delegate() { int x = list[3]; });
+			Assert.Throws<FillMeInException>(delegate() { int x = list[3]; });
 		}
 
 		[Koan(12, DisplayName = "04.12 - ConvertingToFixedSizeArray")]
@@ -322,7 +324,7 @@ namespace DotNetKoans.CSharp
 
 			dictionary["one"] = "uno";
 
-			Assert.Throws(typeof(FillMeIn), delegate() { string s = dictionary["two"]; });
+			Assert.Throws<FillMeInException>(delegate() { string s = dictionary["two"]; });
 		}
 
 		[Koan(24, DisplayName = "04.24 - CatchingMissingData")]

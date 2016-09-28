@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
+using Assert = Xunit.KoanHelpers.Assert;
+
 namespace DotNetKoans.CSharp
 {
     [Trait("Topic", "11 - About Lambdas")]

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using Xunit;
 using System.Linq;
 
+using Assert = Xunit.KoanHelpers.Assert;
+
 namespace DotNetKoans.CSharp
 {
     [Trait("Topic", "03 - About Arrays")]
@@ -37,7 +39,7 @@ namespace DotNetKoans.CSharp
             Assert.True(array.IsFixedSize);
 
             //...it means we can't do this: array[1] = 13;
-            Assert.Throws(typeof(FillMeIn), delegate() { array[1] = 13; });
+            Assert.Throws<FillMeInException>(delegate() { array[1] = 13; });
 
             //This is because the array is fixed at length 1. You could write a function
             //which created a new array bigger than the last, copied the elements over, and

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Xunit;
 using DotNetKoans.CSharp;
 
+using Assert = Xunit.KoanHelpers.Assert;
+
 namespace DotNetKoans.CSharp
 {
     public static class ExtensionMethods

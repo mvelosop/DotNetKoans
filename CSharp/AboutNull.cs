@@ -1,6 +1,8 @@
 using System;
 using Xunit;
 
+using Assert = Xunit.KoanHelpers.Assert;
+
 namespace DotNetKoans.CSharp
 {
     [Trait("Topic", "02 - About Null")]
@@ -12,15 +14,15 @@ namespace DotNetKoans.CSharp
             Assert.True(typeof(object).IsAssignableFrom(null)); //not everything is an object
         }
 
-        [Koan(2, DisplayName = "02.02 - YouGetNullPointerErrorsWhenCallingMethodsOnNull")]
-        public void YouGetNullPointerErrorsWhenCallingMethodsOnNull()
+        [Koan(2, DisplayName = "02.02 - YouGetNullReferenceExceptionWhenCallingMethodsOnNull")]
+        public void YouGetNullReferenceExceptionWhenCallingMethodsOnNull()
         {
             //What is the Exception that is thrown when you call a method on a null object?
             //Don't be confused by the code below. It is using Anonymous Delegates which we will
             //cover later on. 
             object nothing = null;
 
-            Assert.Throws(typeof(FillMeIn), delegate() { nothing.ToString(); });
+            Assert.Throws<FillMeInException>(delegate () { nothing.ToString(); });
 
             //What's the message of the exception? What substring or pattern could you test
             //against in order to have a good idea of what the string is?
