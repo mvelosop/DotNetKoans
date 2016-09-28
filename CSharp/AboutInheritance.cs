@@ -1,5 +1,7 @@
 using Xunit;
 
+using Assert = Xunit.KoanHelpers.Assert;
+
 namespace DotNetKoans.CSharp
 {
     [Trait("Topic", "07 - About Inheritance")]

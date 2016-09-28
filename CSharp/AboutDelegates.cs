@@ -4,6 +4,8 @@ using System.Linq;
 using Xunit;
 using System.Text;
 
+using Assert = Xunit.KoanHelpers.Assert;
+
 namespace DotNetKoans.CSharp
 {
     [Trait("Topic", "10 - About Delegates")]
@@ -34,11 +36,10 @@ namespace DotNetKoans.CSharp
         [Koan(1, DisplayName = "10.01 - DelegatesAreReferenceTypes")]
         public void DelegatesAreReferenceTypes()
         {
-            //If you don't initialize a delegate it will be a null value, just as any other reference type.
-            BinaryOp op;
+            //A delegate is just another object, so it has to be initialized to use it.
+            BinaryOp op = null;
 
-            // At this point op is so null that the following line won't even compile:
-            // Assert.Null(op);
+            Assert.NotNull(op); // This must be null
         }
 
         [Koan(2, DisplayName = "10.02 - DelegatesCanBeInstantiated")]

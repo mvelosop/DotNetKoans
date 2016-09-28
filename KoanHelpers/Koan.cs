@@ -12,4 +12,9 @@ namespace DotNetKoans
     {
 
     }
+
+	public abstract class FillMeInException : Exception
+	{
+
+	}
 }
