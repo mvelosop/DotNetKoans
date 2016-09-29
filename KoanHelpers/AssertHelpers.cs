@@ -13,7 +13,7 @@ namespace Xunit.KoanHelpers
 
     */
 
-    public class Assert
+    public class KoanAssert
     {
         private static string _assertMessage = "You have yet to gain the insight from this Koan!";
 
@@ -21,7 +21,7 @@ namespace Xunit.KoanHelpers
         {
             try
             {
-                Xunit.Assert.Contains(expected, actual);
+                Assert.Contains(expected, actual);
             }
             catch
             {
@@ -33,7 +33,7 @@ namespace Xunit.KoanHelpers
         {
             try
             {
-                Xunit.Assert.DoesNotThrow(testCode);
+                Assert.DoesNotThrow(testCode);
             }
             catch
             {
@@ -45,7 +45,7 @@ namespace Xunit.KoanHelpers
         {
             try
             {
-                Xunit.Assert.Equal(expected, actual);
+                Assert.Equal(expected, actual);
             }
             catch
             {
@@ -57,7 +57,7 @@ namespace Xunit.KoanHelpers
         {
             try
             {
-                Xunit.Assert.NotEqual(expected, actual);
+                Assert.NotEqual(expected, actual);
             }
             catch
             {
@@ -69,7 +69,7 @@ namespace Xunit.KoanHelpers
         {
             try
             {
-                Xunit.Assert.NotNull(@object);
+                Assert.NotNull(@object);
             }
             catch
             {
@@ -81,7 +81,7 @@ namespace Xunit.KoanHelpers
         {
             try
             {
-                Xunit.Assert.Null(@object);
+                Assert.Null(@object);
             }
             catch
             {
@@ -93,7 +93,7 @@ namespace Xunit.KoanHelpers
         {
             try
             {
-                Xunit.Assert.Same(expected, actual);
+                Assert.Same(expected, actual);
             }
             catch
             {
@@ -105,7 +105,7 @@ namespace Xunit.KoanHelpers
         {
             try
             {
-                var ex = Xunit.Assert.Throws<T>(testCode);
+                var ex = Assert.Throws<T>(testCode);
 
                 return ex;
             }

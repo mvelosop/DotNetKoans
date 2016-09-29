@@ -4,7 +4,7 @@ using System.Linq;
 using Xunit;
 using System.Text;
 
-using Assert = Xunit.KoanHelpers.Assert;
+using Assert = Xunit.KoanHelpers.KoanAssert;
 
 namespace DotNetKoans.CSharp
 {

@@ -1,6 +1,6 @@
 using Xunit;
 
-using Assert = Xunit.KoanHelpers.Assert;
+using Assert = Xunit.KoanHelpers.KoanAssert;
 
 namespace DotNetKoans.CSharp
 {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Xunit;
 using DotNetKoans.CSharp;
 
-using Assert = Xunit.KoanHelpers.Assert;
+using Assert = Xunit.KoanHelpers.KoanAssert;
 
 namespace DotNetKoans.CSharp
 {
