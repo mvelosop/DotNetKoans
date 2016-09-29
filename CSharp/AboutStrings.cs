@@ -355,5 +355,27 @@ broken line";
             //of this tutorial. The book "Mastering Regular Expressions"
             //is highly recommended to be on your bookshelf
         }
+
+        [Koan(33, DisplayName = "06.33 - AnEasyWayToConcatenateCollectionsOfStrings")]
+        public void AnEasyWayToConcatenateCollectionsOfStrings()
+        {
+            var stringList = new List<string> {
+                "The",
+                "quick",
+                "brown",
+                "fox",
+                "jumped",
+                "over",
+                "the",
+                "lazy",
+                "dog."
+            };
+
+            var str = String.Join(" ", stringList);
+
+            Assert.Equal(FILL_ME_IN, str);
+        }
+
+
     }
 }
