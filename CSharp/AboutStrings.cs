@@ -376,6 +376,20 @@ broken line";
             Assert.Equal(FILL_ME_IN, str);
         }
 
+        [Koan(34, DisplayName = "06.34 - CSharp6IntroducesAShorthandForStringFormat")]
+        public void CSharp6IntroducesAShorthandForStringFormat()
+        {
+            var world = "World";
+
+            var str = $"Hello, {world}";
+
+            Assert.Equal(FILL_ME_IN, str);
+
+            var strFromVerbatimFormat = $@"Hello ""{world}""!";
+
+            Assert.Equal(FILL_ME_IN, strFromVerbatimFormat);
+
+        }
 
     }
 }
