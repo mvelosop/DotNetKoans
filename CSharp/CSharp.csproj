@@ -75,6 +75,7 @@
     <Compile Include="AboutGenericCollections.cs" />
     <Compile Include="AboutInheritance.cs" />
     <Compile Include="AboutLambdas.cs" />
+    <Compile Include="AboutLinq.cs" />
     <Compile Include="AboutMethods.cs" />
     <Compile Include="AboutNull.cs" />
     <Compile Include="AboutStrings.cs" />
