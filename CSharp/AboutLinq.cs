@@ -25,19 +25,26 @@ namespace DotNetKoans.CSharp
 		public decimal Rating { get; set; }
 	}
 
-	[Trait("Topic", "12 - About Linq")]
+	[Trait("Topic", "13 - About Linq")]
 	public class AboutLinq : Koan
 	{
-		[Koan(1, DisplayName = "12.01 - TheWhereMethodReturnsAFilteredCollection")]
-		public void TheWhereMethodReturnsAFilteredCollection()
+		private List<Movie> GetShortMovieList()
 		{
-			var movies = new List<Movie> {
+			var list = new List<Movie> {
 				new Movie { MovieTitle = "The Shawshank Redemption", Category = "Drama", Year = 1994 },
 				new Movie { MovieTitle = "The Godfather", Category = "Drama", Year = 1972 },
 				new Movie { MovieTitle = "Pulp Fiction", Category = "Thriller", Year = 1994 },
 				new Movie { MovieTitle = "Schindler's List", Category = "Drama", Year = 1993 },
 				new Movie { MovieTitle = "Star Wars", Category = "Action", Year = 1977 },
 			};
+
+			return list;
+		}
+
+		[Koan(1, DisplayName = "13.01 - Where method returns a filtered collection")]
+		public void WhereMethodReturnsAFilteredCollection()
+		{
+			var movies = GetShortMovieList();
 
 			// Use lambda expressions for query criteria
 			var dramaMovies = movies.Where(m => m.Category == "Drama");
@@ -58,16 +65,10 @@ namespace DotNetKoans.CSharp
 			//Assert.Equal(FILL_ME_IN, titles);
 		}
 
-		[Koan(2, DisplayName = "12.02 - TheSelectMethodCanReturnACollectionWithASubSetOfProperties")]
-		public void TheSelectMethodCanReturnACollectionWithASubSetOfProperties()
+		[Koan(2, DisplayName = "13.02 - Select method can return a collection of one property")]
+		public void SelectMethodCanReturnACollectionOfOneProperty()
 		{
-			var movies = new List<Movie> {
-				new Movie { MovieTitle = "The Shawshank Redemption", Category = "Drama", Year = 1994 },
-				new Movie { MovieTitle = "The Godfather", Category = "Drama", Year = 1972 },
-				new Movie { MovieTitle = "Pulp Fiction", Category = "Thriller", Year = 1994 },
-				new Movie { MovieTitle = "Schindler's List", Category = "Drama", Year = 1993 },
-				new Movie { MovieTitle = "Star Wars", Category = "Action", Year = 1977 },
-			};
+			var movies = GetShortMovieList();
 
 			// Use lambda expressions to select properties
 			var dramaMovieTitles = movies.Where(m => m.Category == "Drama").Select(m => m.MovieTitle);
@@ -76,16 +77,10 @@ namespace DotNetKoans.CSharp
 			//Assert.Equal(FILL_ME_IN, String.Join(",", dramaMovieTitles));
 		}
 
-		[Koan(3, DisplayName = "12.03 - TheSelectMethodCanReturnACollectionOfNewObjects")]
-		public void TheSelectMethodCanReturnACollectionOfNewObjects()
+		[Koan(3, DisplayName = "13.03 - Select method can return a collection of new objects")]
+		public void SelectMethodCanReturnACollectionOfNewObjects()
 		{
-			var movies = new List<Movie> {
-				new Movie { MovieTitle = "The Shawshank Redemption", Category = "Drama", Year = 1994 },
-				new Movie { MovieTitle = "The Godfather", Category = "Drama", Year = 1972 },
-				new Movie { MovieTitle = "Pulp Fiction", Category = "Thriller", Year = 1994 },
-				new Movie { MovieTitle = "Schindler's List", Category = "Drama", Year = 1993 },
-				new Movie { MovieTitle = "Star Wars", Category = "Action", Year = 1977 },
-			};
+			var movies = GetShortMovieList();
 
 			// Lambda expressions for select can create anonymous objects
 			var dramaMovies = movies.Where(m => m.Category == "Drama").Select(m => new { Title = m.MovieTitle, Year = m.Year });
@@ -103,27 +98,56 @@ namespace DotNetKoans.CSharp
 			//Assert.Equal(FILL_ME_IN, titles);
 		}
 
-		[Koan(4, DisplayName = "12.04 - TheWhereMethodCanHaveSeveralConditions")]
-		public void TheWhereMethodCanHaveSeveralConditions()
+		[Koan(4, DisplayName = "13.04 - Where method can receive several conditions")]
+		public void WhereMethodCanReceiveSeveralConditions()
 		{
-			var movies = new List<Movie> {
-				new Movie { MovieTitle = "The Shawshank Redemption", Category = "Drama", Year = 1994 },
-				new Movie { MovieTitle = "The Godfather", Category = "Drama", Year = 1972 },
-				new Movie { MovieTitle = "Pulp Fiction", Category = "Thriller", Year = 1994 },
-				new Movie { MovieTitle = "Schindler's List", Category = "Drama", Year = 1993 },
-				new Movie { MovieTitle = "Star Wars", Category = "Action", Year = 1977 },
-			};
+			var movies = GetShortMovieList();
 
-			// Use lambda expressions to select properties
 			var drama1994Movies = movies.Where(m => m.Category == "Drama" && m.Year == 1994);
 
 			Assert.Equal(1, drama1994Movies.Count());
 			//Assert.Equal(FILL_ME_IN, drama1994Movies.Count());
 		}
 
+		[Koan(5, DisplayName = "13.05 - Where methods can be chained")]
+		public void WhereMethodsCanBeChained()
+		{
+			var movies = GetShortMovieList();
 
-		// FirstOrDefault
+			var dramaMovies = movies.Where(m => m.Category == "Drama").Where(m => m.Year == 1972);
+
+			Assert.Equal("The Godfather", dramaMovies.ToArray()[0].MovieTitle);
+			//Assert.Equal(FILL_ME_IN, dramaMovies.ToArray()[0].MovieTitle);
+		}
+
+		[Koan(6, DisplayName = "13.06 - FirstOrDefault method can return the first item")]
+		public void FirstOrDefaultMethodCanReturnTheFirstItem()
+		{
+			var movies = GetShortMovieList();
+
+			var dramaMovie1 = movies.FirstOrDefault(m => m.Category == "Drama" && m.Year == 2000);
+
+			Assert.Null(dramaMovie1);
+			//Assert.NotNull(drama2000Movie);
+
+			var dramaMovie2 = movies.FirstOrDefault(m => m.Category == "Drama" && m.Year == 1994);
+
+			Assert.Equal(typeof(Movie), dramaMovie2.GetType());
+			//Assert.Equal(typeof(FillMeIn), drama1994Movie.GetType());
+
+			var dramaMovie3 = movies.FirstOrDefault(m => m.Category == "Drama");
+
+			Assert.Equal("The Shawshank Redemption", dramaMovie3.MovieTitle);
+			//Assert.Equal(FILL_ME_IN, dramaMovie3.MovieTitle);
+		}
+
 		// SingleOrDefault
+		// Subqueries
+		// Join
+		// Union
+		// Minus
+		// Intersect
+		// SelectMany
 
 		private List<Movie> GetMovieList()
 		{

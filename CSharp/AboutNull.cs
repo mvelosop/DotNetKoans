@@ -5,13 +5,15 @@ using Assert = Xunit.KoanHelpers.KoanAssert;
 
 namespace DotNetKoans.CSharp
 {
-    [Trait("Topic", "02 - About Null")]
+    [Trait("Topic", @"02 - About ""null""")]
     public class AboutNull : Koan
     {
-        [Koan(1, DisplayName = "02.01 - NullIsNotAnObject")]
+        [Koan(1, DisplayName = @"02.01 - ""null"" is not an object")]
         public void NullIsNotAnObject()
         {
-            Assert.True(typeof(object).IsAssignableFrom(null)); //not everything is an object
+            var koanInstance = new Koan();
+
+            Assert.True(null is object); //not everything is an object
         }
 
         [Koan(2, DisplayName = "02.02 - YouGetNullReferenceExceptionWhenCallingMethodsOnNull")]
@@ -30,7 +32,7 @@ namespace DotNetKoans.CSharp
             {
                 nothing.ToString();
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 Assert.Contains(FILL_ME_IN as string, ex.Message);
             }
@@ -73,6 +75,12 @@ namespace DotNetKoans.CSharp
             object obj = null;
 
             Assert.True(obj.Equals(null));
+        }
+
+        [Koan(7, DisplayName = "02.07 - introduce object, classes and instances")]
+        public void ToDo()
+        {
+            throw new NotImplementedException();
         }
     }
 }
