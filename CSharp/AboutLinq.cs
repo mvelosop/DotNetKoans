@@ -25,7 +25,7 @@ namespace DotNetKoans.CSharp
 		public decimal Rating { get; set; }
 	}
 
-	[Trait("Topic", "13 - About Linq")]
+	[Trait("Topic", "14 - About Linq")]
 	public class AboutLinq : Koan
 	{
 		private List<Movie> GetShortMovieList()
@@ -41,7 +41,7 @@ namespace DotNetKoans.CSharp
 			return list;
 		}
 
-		[Koan(1, DisplayName = "13.01 - Where method returns a filtered collection")]
+		[Koan(1, DisplayName = "14.01 - Where method returns a filtered collection")]
 		public void WhereMethodReturnsAFilteredCollection()
 		{
 			var movies = GetShortMovieList();
@@ -65,7 +65,7 @@ namespace DotNetKoans.CSharp
 			//Assert.Equal(FILL_ME_IN, titles);
 		}
 
-		[Koan(2, DisplayName = "13.02 - Select method can return a collection of one property")]
+		[Koan(2, DisplayName = "14.02 - Select method can return a collection of one property")]
 		public void SelectMethodCanReturnACollectionOfOneProperty()
 		{
 			var movies = GetShortMovieList();
@@ -77,7 +77,7 @@ namespace DotNetKoans.CSharp
 			//Assert.Equal(FILL_ME_IN, String.Join(",", dramaMovieTitles));
 		}
 
-		[Koan(3, DisplayName = "13.03 - Select method can return a collection of new objects")]
+		[Koan(3, DisplayName = "14.03 - Select method can return a collection of new objects")]
 		public void SelectMethodCanReturnACollectionOfNewObjects()
 		{
 			var movies = GetShortMovieList();
@@ -98,7 +98,7 @@ namespace DotNetKoans.CSharp
 			//Assert.Equal(FILL_ME_IN, titles);
 		}
 
-		[Koan(4, DisplayName = "13.04 - Where method can receive several conditions")]
+		[Koan(4, DisplayName = "14.04 - Where method can receive several conditions")]
 		public void WhereMethodCanReceiveSeveralConditions()
 		{
 			var movies = GetShortMovieList();
@@ -109,7 +109,7 @@ namespace DotNetKoans.CSharp
 			//Assert.Equal(FILL_ME_IN, drama1994Movies.Count());
 		}
 
-		[Koan(5, DisplayName = "13.05 - Where methods can be chained")]
+		[Koan(5, DisplayName = "14.05 - Where methods can be chained")]
 		public void WhereMethodsCanBeChained()
 		{
 			var movies = GetShortMovieList();
@@ -120,8 +120,29 @@ namespace DotNetKoans.CSharp
 			//Assert.Equal(FILL_ME_IN, dramaMovies.ToArray()[0].MovieTitle);
 		}
 
-		[Koan(6, DisplayName = "13.06 - FirstOrDefault method can return the first item")]
+		[Koan(6, DisplayName = "14.06 - FirstOrDefault method can return the first item")]
 		public void FirstOrDefaultMethodCanReturnTheFirstItem()
+		{
+			var movies = GetShortMovieList();
+
+			var dramaMovie1 = movies.SingleOrDefault(m => m.Category == "Drama" && m.Year == 2000);
+
+			Assert.Null(dramaMovie1);
+			//Assert.NotNull(dramaMovie1);
+
+			var dramaMovie2 = movies.SingleOrDefault(m => m.Category == "Drama" && m.Year == 1994);
+
+			Assert.Equal(typeof(Movie), dramaMovie2.GetType());
+			//Assert.Equal(typeof(FillMeIn), dramaMovie2.GetType());
+
+			var dramaMovie3 = movies.FirstOrDefault(m => m.Category == "Drama");
+
+			Assert.Equal("The Shawshank Redemption", dramaMovie3.MovieTitle);
+			//Assert.Equal(FILL_ME_IN, dramaMovie3.MovieTitle);
+		}
+
+		[Koan(7, DisplayName = "14.07 - SingleOrDefault method can return a single item")]
+		public void SingleOrDefaultMethodCanReturnASingleItem()
 		{
 			var movies = GetShortMovieList();
 
@@ -132,17 +153,36 @@ namespace DotNetKoans.CSharp
 
 			var dramaMovie2 = movies.FirstOrDefault(m => m.Category == "Drama" && m.Year == 1994);
 
-			Assert.Equal(typeof(Movie), dramaMovie2.GetType());
-			//Assert.Equal(typeof(FillMeIn), drama1994Movie.GetType());
+			Assert.Equal("The Shawshank Redemption", dramaMovie2.MovieTitle);
+			//Assert.Equal(FILL_ME_IN, dramaMovie2.MovieTitle);
 
-			var dramaMovie3 = movies.FirstOrDefault(m => m.Category == "Drama");
-
-			Assert.Equal("The Shawshank Redemption", dramaMovie3.MovieTitle);
-			//Assert.Equal(FILL_ME_IN, dramaMovie3.MovieTitle);
+			try
+			{
+				var dramaMovie3 = movies.SingleOrDefault(m => m.Category == "Drama");
+			}
+			catch (Exception ex)
+			{
+				Assert.True(ex is Exception);
+				//Assert.True(ex is FillMeInException);
+			}
 		}
 
-		// SingleOrDefault
-		// Subqueries
+		[Koan(8, DisplayName = "14.08 - Contains method can resolve subqueries")]
+		public void ContainsMethodsCanResolveSubQueries()
+		{
+			var movies = GetShortMovieList();
+
+			var seventies = movies.Where(m => m.Year < 1980 && m.Year >= 1970).Select(m => m.Year);
+
+			Assert.Equal(2, seventies.Count());
+			//Assert.Equal(FILL_ME_IN, years.Count());
+
+			var seventiesDramaMovies = movies.Where(m => m.Category == "Drama" && seventies.Contains(m.Year));
+
+			Assert.Equal("The Godfather", seventiesDramaMovies.FirstOrDefault().MovieTitle);
+			//Assert.Equal(FILL_ME_IN, seventiesDramaMovies.FirstOrDefault().MovieTitle);
+		}
+
 		// Join
 		// Union
 		// Minus
