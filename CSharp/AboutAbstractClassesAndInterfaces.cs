@@ -37,11 +37,9 @@ namespace DotNetKoans.CSharp
 
             var triangle = new Triangle();
 
-            Assert.True(triangle is Triangle); // This must be true
-            //Assert.False(triangle is Triangle); // This must be true
+            Assert.False(triangle is Triangle); // This must be true
 
-            Assert.True(triangle is Shape); // triangle is also a...
-            //Assert.True(triangle is FillMeIn); // triangle is also a...
+            Assert.True(triangle is FillMeIn); // triangle is also a...
 
             try
             {

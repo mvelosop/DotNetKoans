@@ -43,8 +43,7 @@ namespace DotNetKoans.CSharp
 			// Use lambda expressions for query criteria
 			var dramaMovies = movies.Where(m => m.Category == "Drama");
 
-			Assert.Equal(3, dramaMovies.Count());
-			//Assert.Equal(FILL_ME_IN, dramaMovies.Count());
+			Assert.Equal(FILL_ME_IN, dramaMovies.Count());
 
 			var sb = new StringBuilder();
 
@@ -55,8 +54,7 @@ namespace DotNetKoans.CSharp
 
 			var titles = sb.ToString();
 
-			Assert.Equal(", The Shawshank Redemption, The Godfather, Schindler's List", titles);
-			//Assert.Equal(FILL_ME_IN, titles);
+			Assert.Equal(FILL_ME_IN, titles);
 		}
 
 		[Koan(2, DisplayName = "14.02 - Select method can return a collection of one property")]
@@ -67,8 +65,7 @@ namespace DotNetKoans.CSharp
 			// Use lambda expressions to select properties
 			var dramaMovieTitles = movies.Where(m => m.Category == "Drama").Select(m => m.MovieTitle);
 
-			Assert.Equal("The Shawshank Redemption, The Godfather, Schindler's List", String.Join(", ", dramaMovieTitles));
-			//Assert.Equal(FILL_ME_IN, String.Join(",", dramaMovieTitles));
+			Assert.Equal(FILL_ME_IN, String.Join(",", dramaMovieTitles));
 		}
 
 		[Koan(3, DisplayName = "14.03 - Select method can return a collection of new objects")]
@@ -88,8 +85,7 @@ namespace DotNetKoans.CSharp
 
 			var titles = sb.ToString();
 
-			Assert.Equal("The Shawshank Redemption (1994)\r\nThe Godfather (1972)\r\nSchindler's List (1993)\r\n", titles);
-			//Assert.Equal(FILL_ME_IN, titles);
+			Assert.Equal(FILL_ME_IN, titles);
 		}
 
 		[Koan(4, DisplayName = "14.04 - Where method can receive several conditions")]
@@ -99,8 +95,7 @@ namespace DotNetKoans.CSharp
 
 			var dramaMovies = movies.Where(m => m.Category == "Drama" && m.Year == 1994);
 
-			Assert.Equal(1, dramaMovies.Count());
-			//Assert.Equal(FILL_ME_IN, dramaMovies.Count());
+			Assert.Equal(FILL_ME_IN, dramaMovies.Count());
 		}
 
 		[Koan(5, DisplayName = "14.05 - Where methods can be chained")]
@@ -110,8 +105,7 @@ namespace DotNetKoans.CSharp
 
 			var dramaMovies = movies.Where(m => m.Category == "Drama").Where(m => m.Year == 1972);
 
-			Assert.Equal("The Godfather", dramaMovies.ToArray()[0].MovieTitle);
-			//Assert.Equal(FILL_ME_IN, dramaMovies.ToArray()[0].MovieTitle);
+			Assert.Equal(FILL_ME_IN, dramaMovies.ToArray()[0].MovieTitle);
 		}
 
 		[Koan(6, DisplayName = "14.06 - FirstOrDefault method can return the first item")]
@@ -121,18 +115,15 @@ namespace DotNetKoans.CSharp
 
 			var dramaMovie1 = movies.SingleOrDefault(m => m.Category == "Drama" && m.Year == 2000);
 
-			Assert.Null(dramaMovie1);
-			//Assert.NotNull(dramaMovie1);
+			Assert.NotNull(dramaMovie1);
 
 			var dramaMovie2 = movies.SingleOrDefault(m => m.Category == "Drama" && m.Year == 1994);
 
-			Assert.Equal(typeof(Movie), dramaMovie2.GetType());
-			//Assert.Equal(typeof(FillMeIn), dramaMovie2.GetType());
+			Assert.Equal(typeof(FillMeIn), dramaMovie2.GetType());
 
 			var dramaMovie3 = movies.FirstOrDefault(m => m.Category == "Drama");
 
-			Assert.Equal("The Shawshank Redemption", dramaMovie3.MovieTitle);
-			//Assert.Equal(FILL_ME_IN, dramaMovie3.MovieTitle);
+			Assert.Equal(FILL_ME_IN, dramaMovie3.MovieTitle);
 		}
 
 		[Koan(7, DisplayName = "14.07 - SingleOrDefault method can return a single item")]
@@ -142,13 +133,11 @@ namespace DotNetKoans.CSharp
 
 			var dramaMovie1 = movies.FirstOrDefault(m => m.Category == "Drama" && m.Year == 2000);
 
-			Assert.Null(dramaMovie1);
-			//Assert.NotNull(drama2000Movie);
+			Assert.NotNull(dramaMovie1);
 
 			var dramaMovie2 = movies.FirstOrDefault(m => m.Category == "Drama" && m.Year == 1994);
 
-			Assert.Equal("The Shawshank Redemption", dramaMovie2.MovieTitle);
-			//Assert.Equal(FILL_ME_IN, dramaMovie2.MovieTitle);
+			Assert.Equal(FILL_ME_IN, dramaMovie2.MovieTitle);
 
 			try
 			{
@@ -156,8 +145,7 @@ namespace DotNetKoans.CSharp
 			}
 			catch (Exception ex)
 			{
-				Assert.True(ex is InvalidOperationException);
-				//Assert.True(ex is FillMeInException);
+				Assert.True(ex is FillMeInException);
 			}
 		}
 
@@ -168,13 +156,11 @@ namespace DotNetKoans.CSharp
 
 			var seventies = movies.Where(m => m.Year < 1980 && m.Year >= 1970).Select(m => m.Year);
 
-			Assert.Equal(2, seventies.Count());
-			//Assert.Equal(FILL_ME_IN, years.Count());
+			Assert.Equal(FILL_ME_IN, seventies.Count());
 
 			var seventiesDramaMovies = movies.Where(m => m.Category == "Drama" && seventies.Contains(m.Year));
 
-			Assert.Equal("The Godfather", seventiesDramaMovies.FirstOrDefault().MovieTitle);
-			//Assert.Equal(FILL_ME_IN, seventiesDramaMovies.FirstOrDefault().MovieTitle);
+			Assert.Equal(FILL_ME_IN, seventiesDramaMovies.FirstOrDefault().MovieTitle);
 		}
 
 	}
