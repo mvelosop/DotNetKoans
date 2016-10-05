@@ -75,7 +75,7 @@
     <Compile Include="AboutExpressions.cs" />
     <Compile Include="AboutGenericCollections.cs" />
     <Compile Include="AboutInheritance.cs" />
-    <Compile Include="AboutInterfaces.cs" />
+    <Compile Include="AboutAbstractClassesAndInterfaces.cs" />
     <Compile Include="AboutLambdas.cs" />
     <Compile Include="AboutLinq.cs" />
     <Compile Include="AboutMethods.cs" />
