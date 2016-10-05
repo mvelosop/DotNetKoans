@@ -72,9 +72,12 @@
     <Compile Include="AboutAssignment.cs" />
     <Compile Include="AboutControlStatements.cs" />
     <Compile Include="AboutDelegates.cs" />
+    <Compile Include="AboutExpressions.cs" />
     <Compile Include="AboutGenericCollections.cs" />
     <Compile Include="AboutInheritance.cs" />
+    <Compile Include="AboutInterfaces.cs" />
     <Compile Include="AboutLambdas.cs" />
+    <Compile Include="AboutLinq.cs" />
     <Compile Include="AboutMethods.cs" />
     <Compile Include="AboutNull.cs" />
     <Compile Include="AboutStrings.cs" />

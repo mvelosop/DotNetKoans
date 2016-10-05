@@ -355,5 +355,41 @@ broken line";
             //of this tutorial. The book "Mastering Regular Expressions"
             //is highly recommended to be on your bookshelf
         }
+
+        [Koan(33, DisplayName = "06.33 - AnEasyWayToConcatenateCollectionsOfStrings")]
+        public void AnEasyWayToConcatenateCollectionsOfStrings()
+        {
+            var stringList = new List<string> {
+                "The",
+                "quick",
+                "brown",
+                "fox",
+                "jumped",
+                "over",
+                "the",
+                "lazy",
+                "dog."
+            };
+
+            var str = String.Join(" ", stringList);
+
+            Assert.Equal(FILL_ME_IN, str);
+        }
+
+        [Koan(34, DisplayName = "06.34 - CSharp6IntroducesAShorthandForStringFormat")]
+        public void CSharp6IntroducesAShorthandForStringFormat()
+        {
+            var world = "World";
+
+            var str = $"Hello, {world}";
+
+            Assert.Equal(FILL_ME_IN, str);
+
+            var strFromVerbatimFormat = $@"Hello ""{world}""!";
+
+            Assert.Equal(FILL_ME_IN, strFromVerbatimFormat);
+
+        }
+
     }
 }

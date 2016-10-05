@@ -17,6 +17,8 @@ namespace Xunit.KoanHelpers
     {
         private static string _assertMessage = "You have yet to gain the insight from this Koan!";
 
+        public static object False { get; set; }
+
         public static void Contains(string expected, string actual)
         {
             try
