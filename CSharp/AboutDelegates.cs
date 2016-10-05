@@ -8,7 +8,7 @@ using Assert = Xunit.KoanHelpers.KoanAssert;
 
 namespace DotNetKoans.CSharp
 {
-    [Trait("Topic", "10 - About Delegates")]
+    [Trait("Topic", "11 - About Delegates")]
     public class AboutDelegates : Koan
     {
         //A delegate is a user defined type just like a class. 
@@ -33,7 +33,7 @@ namespace DotNetKoans.CSharp
             }
         }
 
-        [Koan(1, DisplayName = "10.01 - DelegatesAreReferenceTypes")]
+        [Koan(1, DisplayName = "11.01 - Delegates are reference types")]
         public void DelegatesAreReferenceTypes()
         {
             //A delegate is just another object, so it has to be initialized to use it.
@@ -42,7 +42,7 @@ namespace DotNetKoans.CSharp
             Assert.NotNull(op); // This must be null
         }
 
-        [Koan(2, DisplayName = "10.02 - DelegatesCanBeInstantiated")]
+        [Koan(2, DisplayName = "11.02 - Delegates can be instantiated")]
         public void DelegatesCanBeInstantiated()
         {
             MyMath math = new MyMath();
@@ -51,7 +51,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, op.Method.Name);
         }
 
-        [Koan(3, DisplayName = "10.03 - DelegatesCanBeAssigned")]
+        [Koan(3, DisplayName = "11.03 - Delegates can be assigned")]
         public void DelegatesCanBeAssigned()
         {
             MyMath math = new MyMath();
@@ -61,7 +61,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, op.Method.Name);
         }
 
-        [Koan(4, DisplayName = "10.04 - DelegatesCanReferenceStaticMethods")]
+        [Koan(4, DisplayName = "11.04 - Delegates can reference static methods")]
         public void DelegatesCanReferenceStaticMethods()
         {
             BinaryOp op = MyMath.Subtract;
@@ -69,7 +69,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, op.Method.Name);
         }
 
-        [Koan(5, DisplayName = "10.05 - MethodsCalledViaDelegate")]
+        [Koan(5, DisplayName = "11.05 - Methods called via delegate")]
         public void MethodsCalledViaDelegate()
         {
             MyMath math = new MyMath();
@@ -84,7 +84,7 @@ namespace DotNetKoans.CSharp
             return passed(3, 3);
         }
 
-        [Koan(6, DisplayName = "10.06 - DelegatesCanBePassed")]
+        [Koan(6, DisplayName = "11.06 - Delegates can be passed")]
         public void DelegatesCanBePassed()
         {
             MyMath math = new MyMath();
@@ -94,7 +94,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, PassMeTheDelegate(op));
         }
 
-        [Koan(7, DisplayName = "10.07 - MethodCanBePassedDirectly")]
+        [Koan(7, DisplayName = "11.07 - Method can be passed directly")]
         public void MethodCanBePassedDirectly()
         {
             MyMath math = new MyMath();
@@ -102,7 +102,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, PassMeTheDelegate(math.Add));
         }
 
-        [Koan(8, DisplayName = "10.08 - DelegatesAreImmutable")]
+        [Koan(8, DisplayName = "11.08 - Delegates are immutable")]
         public void DelegatesAreImmutable()
         {
             //Like strings it looks like you can change what a delegate references, but really they are immutable objects
@@ -134,7 +134,7 @@ namespace DotNetKoans.CSharp
             }
         }
 
-        [Koan(9, DisplayName = "10.09 - DelegatesHaveAnInvocationList")]
+        [Koan(9, DisplayName = "11.09 - Delegates have an invocation list")]
         public void DelegatesHaveAnInvocationList()
         {
             FunctionalTricks f = new FunctionalTricks();
@@ -150,7 +150,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, adding.GetInvocationList().Length);
         }
 
-        [Koan(10, DisplayName = "10.10 - OnlyLastResultReturned")]
+        [Koan(10, DisplayName = "11.10 - Only last result returned")]
         public void OnlyLastResultReturned()
         {
             FunctionalTricks f = new FunctionalTricks();
@@ -163,7 +163,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, adding(5));
         }
 
-        [Koan(11, DisplayName = "10.11 - RemovingMethods")]
+        [Koan(11, DisplayName = "11.11 - Removing methods")]
         public void RemovingMethods()
         {
             FunctionalTricks f = new FunctionalTricks();
@@ -195,7 +195,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(42, x + y);
         }
 
-        [Koan(12, DisplayName = "10.12 - BuiltInActionDelegateTakesInt")]
+        [Koan(12, DisplayName = "11.12 - Built in action delegate takes int")]
         public void BuiltInActionDelegateTakesInt()
         {
             //With the release of generics in .Net 2.0 we got some delegates which will cover most of our needs. 
@@ -208,7 +208,7 @@ namespace DotNetKoans.CSharp
             i((int)FILL_ME_IN);
         }
 
-        [Koan(13, DisplayName = "10.13 - BuiltInActionDelegateTakesString")]
+        [Koan(13, DisplayName = "11.13 - Built in action delegate takes string")]
         public void BuiltInActionDelegateTakesString()
         {
             // Because the delegate is a template, it also works with any other type. 
@@ -217,7 +217,7 @@ namespace DotNetKoans.CSharp
             s((string)FILL_ME_IN);
         }
 
-        [Koan(14, DisplayName = "10.14 - BuiltInActionDelegateIsOverloaded")]
+        [Koan(14, DisplayName = "11.14 - Built in action delegate is overloaded")]
         public void BuiltInActionDelegateIsOverloaded()
         {
             //Action is an overloaded delegate so it can take more than one parameter
@@ -241,7 +241,7 @@ namespace DotNetKoans.CSharp
             }
         }
 
-        [Koan(15, DisplayName = "10.15 - ActionInTheBcl")]
+        [Koan(15, DisplayName = "11.15 - Action in the bcl")]
         public void ActionInTheBcl()
         {
             //You will find Action used within the BCL, often when iterating over a container
@@ -264,7 +264,7 @@ namespace DotNetKoans.CSharp
             return "42" == s;
         }
 
-        [Koan(16, DisplayName = "10.16 - BuiltInPredicateDelegateIntSatisfied")]
+        [Koan(16, DisplayName = "11.16 - Built in predicate delegate int satisfied")]
         public void BuiltInPredicateDelegateIntSatisfied()
         {
             //The Predicate<T> delegate 
@@ -277,7 +277,7 @@ namespace DotNetKoans.CSharp
             Assert.True(i(42));
         }
 
-        [Koan(17, DisplayName = "10.17 - BuiltInPredicateDelegateStringSatisfied")]
+        [Koan(17, DisplayName = "11.17 - Built in predicate delegate string satisfied")]
         public void BuiltInPredicateDelegateStringSatisfied()
         {
             //Because it is a template, you can work with any type
@@ -295,7 +295,7 @@ namespace DotNetKoans.CSharp
             return country.StartsWith("S");
         }
 
-        [Koan(18, DisplayName = "10.18 - FindingWithPredicate")]
+        [Koan(18, DisplayName = "11.18 - Finding with predicate")]
         public void FindingWithPredicate()
         {
             //Predicate can be used to find an element in an array
@@ -311,7 +311,7 @@ namespace DotNetKoans.CSharp
             return countries.Contains(country);
         }
 
-        [Koan(19, DisplayName = "10.19 - ValidationWithPredicate")]
+        [Koan(19, DisplayName = "11.19 - Validation with predicate")]
         public void ValidationWithPredicate()
         {
             //Predicate can also be used when verifying 
@@ -330,7 +330,7 @@ namespace DotNetKoans.CSharp
             return x + y;
         }
 
-        [Koan(20, DisplayName = "10.20 - FuncWithNoParameters")]
+        [Koan(20, DisplayName = "11.20 - Func with no parameters")]
         public void FuncWithNoParameters()
         {
             //The Func<> delegate 
@@ -345,7 +345,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, d());
         }
 
-        [Koan(21, DisplayName = "10.21 - FunctionReturnsInt")]
+        [Koan(21, DisplayName = "11.21 - Function returns int")]
         public void FunctionReturnsInt()
         {
             //Like Action<>, Func<> is overloaded and can take a variable number of parameters.
@@ -377,7 +377,7 @@ namespace DotNetKoans.CSharp
             return lhs.Model.CompareTo(rhs.Model);
         }
 
-        [Koan(22, DisplayName = "10.22 - SortingWithComparison")]
+        [Koan(22, DisplayName = "11.22 - Sorting with comparison")]
         public void SortingWithComparison()
         {
             //You could make classes sortable by implementing IComparable or IComparer. But the Comparison<> delegate makes it easier
@@ -400,7 +400,7 @@ namespace DotNetKoans.CSharp
             return x.ToString();
         }
 
-        [Koan(23, DisplayName = "10.23 - ChangingTypesWithConverter")]
+        [Koan(23, DisplayName = "11.23 - Changing types with converter")]
         public void ChangingTypesWithConverter()
         {
             //The Converter<> delegate

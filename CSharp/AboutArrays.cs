@@ -11,7 +11,7 @@ namespace DotNetKoans.CSharp
     [Trait("Topic", "03 - About Arrays")]
     public class AboutArrays : Koan
     {
-        [Koan(1, DisplayName = "03.01 - CreatingArrays")]
+        [Koan(1, DisplayName = "03.01 - Creating arrays")]
         public void CreatingArrays()
         {
             var empty_array = new object[] { };
@@ -23,7 +23,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, empty_array.Length);
         }
 
-        [Koan(2, DisplayName = "03.02 - ArrayLiterals")]
+        [Koan(2, DisplayName = "03.02 - Array literals")]
         public void ArrayLiterals()
         {
             //You don't have to specify a type if the arguments can be inferred
@@ -55,7 +55,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal((new int[] { 42, (int)FILL_ME_IN}), dynamicArray.ToArray());
         }
 
-        [Koan(3, DisplayName = "03.03 - AccessingArrayElements")]
+        [Koan(3, DisplayName = "03.03 - Accessing array elements")]
         public void AccessingArrayElements()
         {
             var array = new[] { "peanut", "butter", "and", "jelly" };
@@ -66,7 +66,7 @@ namespace DotNetKoans.CSharp
             //This doesn't work: Assert.Equal(FILL_ME_IN, array[-1]);
         }
 
-        [Koan(4, DisplayName = "03.04 - SlicingArrays")]
+        [Koan(4, DisplayName = "03.04 - Slicing arrays")]
         public void SlicingArrays()
         {
             var array = new[] { "peanut", "butter", "and", "jelly" };

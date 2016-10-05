@@ -5,9 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
+using Assert = Xunit.KoanHelpers.KoanAssert;
+
 namespace DotNetKoans.CSharp
 {
-	[Trait("Topic", "12 - About Expressions")]
+	[Trait("Topic", "13 - About Expressions")]
 	public class AboutExpressions
 	{
 		[Koan(0)]

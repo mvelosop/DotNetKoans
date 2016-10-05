@@ -41,7 +41,7 @@ namespace DotNetKoans.CSharp
             return names;
         }
 
-        [Koan(1, DisplayName = "08.01 - LocalMethodsWithVariableParams")]
+       [Koan(1, DisplayName = "08.01 - Local methods with variable params")]
         public void LocalMethodsWithVariableParams()
         {
             Assert.Equal(FILL_ME_IN, LocalMethodWithVariableParameters("Cory", "Will", "Corey"));
@@ -50,7 +50,7 @@ namespace DotNetKoans.CSharp
         //Note how we called the method by saying "this.LocalMethodWithVariableParameters"
         //That isn't necessary for local methods
 
-        [Koan(2, DisplayName = "08.02 - LocalMethodsWithoutExplicitReceiver")]
+       [Koan(2, DisplayName = "08.02 - Local methods without explicit receiver")]
         public void LocalMethodsWithoutExplicitReceiver()
         {
             Assert.Equal(FILL_ME_IN, LocalMethodWithVariableParameters("Cory", "Will", "Corey"));
@@ -63,7 +63,7 @@ namespace DotNetKoans.CSharp
         //DotNetKoans.CSharp namespace, AboutMethods can automatically
         //find them
 
-        [Koan(3, DisplayName = "08.03 - ExtensionMethodsShowUpInTheCurrentClass")]
+       [Koan(3, DisplayName = "08.03 - Extension methods show up in the current class")]
         public void ExtensionMethodsShowUpInTheCurrentClass()
         {
             Assert.Equal(FILL_ME_IN, this.HelloWorld());
@@ -74,7 +74,7 @@ namespace DotNetKoans.CSharp
         //variable. So, this wouldn't work, giving a compile-time error:
         //Assert.Equal(FILL_ME_IN, HelloWorld());
 
-        [Koan(4, DisplayName = "08.04 - ExtensionMethodsWithParameters")]
+       [Koan(4, DisplayName = "08.04 - Extension methods with parameters")]
         public void ExtensionMethodsWithParameters()
         {
             Assert.Equal(FILL_ME_IN, this.SayHello("Cory"));
@@ -83,7 +83,7 @@ namespace DotNetKoans.CSharp
         //Any of the parameter things you can do with
         //extension methods you can also do with local methods
 
-        [Koan(5, DisplayName = "08.05 - ExtensionMethodsWithVariableParameters")]
+       [Koan(5, DisplayName = "08.05 - Extension methods with variable parameters")]
         public void ExtensionMethodsWithVariableParameters()
         {
             Assert.Equal(FILL_ME_IN, this.MethodWithVariableArguments("Cory", "Will", "Corey"));
@@ -93,7 +93,7 @@ namespace DotNetKoans.CSharp
         //the name of the class they are extending. For example, 
         //we can "extend" the string class like so:
 
-        [Koan(6, DisplayName = "08.06 - ExtendingCoreClasses")]
+       [Koan(6, DisplayName = "08.06 - Extending core classes")]
         public void ExtendingCoreClasses()
         {
             Assert.Equal(FILL_ME_IN, "Cory".SayHi());
@@ -118,7 +118,7 @@ namespace DotNetKoans.CSharp
         //Static methods don't require an instance of the object
         //in order to be called. 
 
-        [Koan(7, DisplayName = "08.07 - CallingStaticMethodsWithoutAnInstance")]
+       [Koan(7, DisplayName = "08.07 - Calling static methods without an instance")]
         public void CallingStaticMethodsWithoutAnInstance()
         {
             Assert.Equal(FILL_ME_IN, InnerSecret.Key());
@@ -129,7 +129,7 @@ namespace DotNetKoans.CSharp
         //InnerSecret secret = new InnerSecret();
         //Assert.Equal(FILL_ME_IN, secret.Key());
 
-        [Koan(8, DisplayName = "08.08 - CallingPublicMethodsOnAnInstance")]
+       [Koan(8, DisplayName = "08.08 - Calling public methods on an instance")]
         public void CallingPublicMethodsOnAnInstance()
         {
             InnerSecret secret = new InnerSecret();
@@ -142,7 +142,7 @@ namespace DotNetKoans.CSharp
         //InformationLeak of the StateSecret class which returns
         //the value from the protected method SuperSecret
 
-        [Koan(9, DisplayName = "08.09 - CallingProtectedMethodsOnAnInstance")]
+       [Koan(9, DisplayName = "08.09 - Calling protected methods on an instance")]
         public void CallingProtectedMethodsOnAnInstance()
         {
             StateSecret secret = new StateSecret();
@@ -158,7 +158,7 @@ namespace DotNetKoans.CSharp
         //you just about anything, and though it's way out of scope
         //for this...
 
-        [Koan(10, DisplayName = "08.10 - SubvertPrivateMethods")]
+       [Koan(10, DisplayName = "08.10 - Subvert private methods")]
         public void SubvertPrivateMethods()
         {
             InnerSecret secret = new InnerSecret();
@@ -180,7 +180,7 @@ namespace DotNetKoans.CSharp
             return p1;
         }
 
-        [Koan(11, DisplayName = "08.11 - CallingGenericMethods")]
+       [Koan(11, DisplayName = "08.11 - Calling generic methods")]
         public void CallingGenericMethods()
         {
             Assert.Equal(typeof(FillMeIn), GiveMeBack<int>(1).GetType());

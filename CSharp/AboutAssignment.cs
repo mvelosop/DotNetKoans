@@ -18,7 +18,7 @@ namespace DotNetKoans.CSharp
         //This isn't available in C#, but there are a few interesting assignment
         //tricks we can pick up.
 
-        [Koan(1, DisplayName = "05.01 - ImplicitAssignment")]
+        [Koan(1, DisplayName = "05.01 - Implicit assignment")]
         public void ImplicitAssignment()
         {
             //Even though we don't specify types explicitly, the compiler
@@ -34,7 +34,7 @@ namespace DotNetKoans.CSharp
             //name = 42;
         }
 
-        [Koan(2, DisplayName = "05.02 - ImplicitArrayAssignmentWithSameTypes")]
+        [Koan(2, DisplayName = "05.02 - Implicit array assignment with same types")]
         public void ImplicitArrayAssignmentWithSameTypes()
         {
             //Even though we don't specify types explicitly, the compiler
@@ -47,7 +47,7 @@ namespace DotNetKoans.CSharp
             //var array = new[] { "John", 1 };
         }
 
-        [Koan(3, DisplayName = "05.03 - MultipleAssignmentsOnSingleLine")]
+        [Koan(3, DisplayName = "05.03 - Multiple assignments on single line")]
         public void MultipleAssignmentsOnSingleLine()
         {
             //You can do multiple assignments on one line, but you 
