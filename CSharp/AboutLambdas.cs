@@ -7,10 +7,10 @@ using Assert = Xunit.KoanHelpers.KoanAssert;
 
 namespace DotNetKoans.CSharp
 {
-    [Trait("Topic", "12 - About Lambdas")]
+    [Trait("Topic", "11 - About Lambdas")]
     public class AboutLambdas : Koan
     {
-        [Koan(1, DisplayName = "12.01 - Using anonymous methods")]
+        [Koan(1, DisplayName = "11.01 - Using anonymous methods")]
         public void UsingAnonymousMethods()
         {
             //The AboutDelegates Koans introduced you to delegates. In all of those koans, 
@@ -29,7 +29,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, result);
         }
 
-        [Koan(2, DisplayName = "12.02 - Anonymous methods can access outer variables")]
+        [Koan(2, DisplayName = "11.02 - Anonymous methods can access outer variables")]
         public void AnonymousMethodsCanAccessOuterVariables()
         {
             //Anonymous methods can access variable defined in the scope of the method where they are defined.
@@ -43,7 +43,7 @@ namespace DotNetKoans.CSharp
                 }));
         }
 
-        [Koan(3, DisplayName = "12.03 - Access even after variable is out of scope")]
+        [Koan(3, DisplayName = "11.03 - Access even after variable is out of scope")]
         public void AccessEvenAfterVariableIsOutOfScope()
         {
             Predicate<int> criteria;
@@ -64,7 +64,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, Array.FindIndex(numbers, criteria));
         }
 
-        [Koan(4, DisplayName = "12.04 - Lambda expressions are shorthand")]
+        [Koan(4, DisplayName = "11.04 - Lambda expressions are shorthand")]
         public void LambdaExpressionsAreShorthand()
         {
             var numbers = new[] { 1, 2, 3, 4 };
@@ -91,7 +91,7 @@ namespace DotNetKoans.CSharp
             //code with a peer, you would say "x going into..."
         }
 
-        [Koan(5, DisplayName = "12.05 - Type can be inferred")]
+        [Koan(5, DisplayName = "11.05 - Type can be inferred")]
         public void TypeCanBeInferred()
         {
             //Fortunately the above form of a Lambda is the most verbose form. 
@@ -113,7 +113,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, anonymous);
         }
 
-        [Koan(6, DisplayName = "12.06 - Parenthesis not needed on single parameter lambdas")]
+        [Koan(6, DisplayName = "11.06 - Parenthesis not needed on single parameter lambdas")]
         public void ParenthesissNotNeededOnSingleParameterLambdas()
         {
             var numbers = new[] { 1, 2, 3, 4 };
@@ -134,7 +134,7 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, anonymous);
         }
 
-        [Koan(7, DisplayName = "12.07 - Block not needed on single statement lambdas")]
+        [Koan(7, DisplayName = "11.07 - Block not needed on single statement lambdas")]
         public void BlockNotNeededOnSingleStatementLambdas()
         {
             var numbers = new[] { 1, 2, 3, 4 };

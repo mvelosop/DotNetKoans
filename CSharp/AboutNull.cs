@@ -11,7 +11,7 @@ namespace DotNetKoans.CSharp
         [Koan(1, DisplayName = @"02.01 - ""null"" is not an object")]
         public void NullIsNotAnObject()
         {
-            var simpleObject = new object(); // this is the simplest object, not very usefull though
+            var simpleObject = new object(); // this is the simplest object, not very useful though
 
             Assert.True(null is object); //not everything is an object
         }
@@ -75,63 +75,6 @@ namespace DotNetKoans.CSharp
             object obj = null;
 
             Assert.True(obj.Equals(null));
-        }
-
-        public class RubberBallClass
-        {
-            public string Color { get; set; }
-        }
-
-        [Koan(7, DisplayName = "02.07 - Classes, objects and instances")]
-        public void ClassesObjectsAndInstances()
-        {
-            // A class is like a mold and instances are each individual object created from the mold 
-            var redBall = new RubberBallClass { Color = "Red" };
-            var blueBall = new RubberBallClass { Color = "Dark Blue" };
-
-            // Each instance (or object) is independent from each other
-            blueBall.Color = "Light Blue";
-
-            // Instance and objects are synonyms
-
-            Assert.Equal(FILL_ME_IN, blueBall.Color);
-            Assert.Equal(FILL_ME_IN, redBall.Color);
-        }
-
-        public class Ball
-        {
-            public Ball() // This is THE DEFAULT CONSTRUCTOR, without parameters
-            {
-                Color = "invisible";
-                Material = "none (virtual)";
-            }
-
-            public Ball(string color)
-            {
-                Color = color;
-                Material = "none (virtual)";
-            }
-
-            public Ball(string color, string material)
-            {
-                Color = color;
-                Material = material;
-            }
-
-            public string Color { get; private set; }
-
-            public string Material { get; private set; }
-        }
-
-        [Koan(8, DisplayName = "02.08 - Classes can have several constructors to simplify object creation")]
-        public void ClassesCanHaveSeveralConstructorsToSimplifyObjectCreation()
-        {
-            var ball = new Ball();
-            var redBall = new Ball("Red");
-            var bluePlasticBall = new Ball("Dark Blue", "Plastic");
-
-            Assert.Equal(FILL_ME_IN, bluePlasticBall.Color);
-            Assert.Equal(FILL_ME_IN, redBall.Material);
         }
     }
 }
