@@ -29,11 +29,9 @@ namespace DotNetKoans.CSharp
 
             // Instance and objects are synonyms
 
-            Assert.Equal("Red", redBall.Color);
-            //Assert.Equal(FILL_ME_IN, redBall.Color);
+            Assert.Equal(FILL_ME_IN, redBall.Color);
 
-            Assert.Equal("Light Blue", blueBall.Color);
-            //Assert.Equal(FILL_ME_IN, blueBall.Color);
+            Assert.Equal(FILL_ME_IN, blueBall.Color);
         }
 
         [Koan(2, DisplayName = "13.02 - \"Type\" class gets information about any type")]
@@ -44,68 +42,60 @@ namespace DotNetKoans.CSharp
             Type rubberBallTypeFromClass = typeof(RubberBall);
             Type rubberBallTypeFromInstance = rubberBall.GetType();
 
-            Assert.Equal("RubberBall", rubberBallTypeFromClass.Name);
-            //Assert.Equal(FILL_ME_IN, rubberBallTypeFromClass.Name);
+            Assert.Equal(FILL_ME_IN, rubberBallTypeFromClass.Name);
 
-            Assert.Equal("RubberBall", rubberBallTypeFromInstance.Name);
-            //Assert.Equal(FILL_ME_IN, rubberBallTypeFromInstance.Name);
+            Assert.Equal(FILL_ME_IN, rubberBallTypeFromInstance.Name);
 
-            Assert.Equal(true, rubberBallTypeFromClass == rubberBallTypeFromInstance);
-            //Assert.Equal(FILL_ME_IN, rubberBallTypeFromClass == rubberBallTypeFromInstance);
+            Assert.Equal(FILL_ME_IN, rubberBallTypeFromClass == rubberBallTypeFromInstance);
 
-            Assert.Equal(true, rubberBall.GetType() == typeof(RubberBall));
-            //Assert.Equal(FILL_ME_IN, rubberBall.GetType() == typeof(RubberBall));
+            Assert.Equal(FILL_ME_IN, rubberBall.GetType() == typeof(RubberBall));
 
             // The line above compares references so both are the same instance
 
             // If we have to evaluate an instance we can use the "is" operator
-            Assert.Equal(true, rubberBall is RubberBall);
-            //Assert.Equal(FILL_ME_IN, rubberBall is RubberBall);
+            Assert.Equal(FILL_ME_IN, rubberBall is RubberBall);
         }
 
-		public class Ball
-		{
-			public Ball() // This is THE DEFAULT CONSTRUCTOR, without parameters
-			{
-				Color = "invisible";
-				Material = "none (virtual)";
-			}
+        public class Ball
+        {
+            public Ball() // This is THE DEFAULT CONSTRUCTOR, without parameters
+            {
+                Color = "invisible";
+                Material = "none (virtual)";
+            }
 
-			public Ball(string color)
-			{
-				Color = color;
-				Material = "none (virtual)";
-			}
+            public Ball(string color)
+            {
+                Color = color;
+                Material = "none (virtual)";
+            }
 
-			public Ball(string color, string material)
-			{
-				Color = color;
-				Material = material;
-			}
+            public Ball(string color, string material)
+            {
+                Color = color;
+                Material = material;
+            }
 
-			public string Color { get; private set; }
+            public string Color { get; private set; }
 
-			public string Material { get; private set; }
-		}
+            public string Material { get; private set; }
+        }
 
-		[Koan(3, DisplayName = "13.03 - Classes can have several constructors to simplify object creation")]
-		public void ClassesCanHaveSeveralConstructorsToSimplifyObjectCreation()
-		{
-			var ball = new Ball();
-			var redBall = new Ball("Red");
-			var bluePlasticBall = new Ball("Dark Blue", "Plastic");
+        [Koan(3, DisplayName = "13.03 - Classes can have several constructors to simplify object creation")]
+        public void ClassesCanHaveSeveralConstructorsToSimplifyObjectCreation()
+        {
+            var ball = new Ball();
+            var redBall = new Ball("Red");
+            var bluePlasticBall = new Ball("Dark Blue", "Plastic");
 
-			Assert.Equal("invisible", ball.Color);
-			//Assert.Equal(FILL_ME_IN, ball.Color);
+            Assert.Equal(FILL_ME_IN, ball.Color);
 
-			Assert.Equal("Dark Blue", bluePlasticBall.Color);
-			//Assert.Equal(FILL_ME_IN, bluePlasticBall.Color);
+            Assert.Equal(FILL_ME_IN, bluePlasticBall.Color);
 
-			Assert.Equal("none (virtual)", redBall.Material);
-			//Assert.Equal(FILL_ME_IN, redBall.Material);
-		}
+            Assert.Equal(FILL_ME_IN, redBall.Material);
+        }
 
-		public abstract class Shape
+        public abstract class Shape
         {
             public abstract double GetArea();
 
@@ -130,20 +120,16 @@ namespace DotNetKoans.CSharp
 
             var triangle = new Triangle();
 
-            Assert.Equal(true, triangle is Triangle);
-            //Assert.Equal(FILL_ME_IN, triangle is Triangle);
+            Assert.Equal(FILL_ME_IN, triangle is Triangle);
 
-            Assert.Equal(true, triangle is Shape);
-            //Assert.Equal(FILL_ME_IN, triangle is Shape);
+            Assert.Equal(FILL_ME_IN, triangle is Shape);
 
             // A triangle is a shape
-            Assert.Equal(true, typeof(Shape).IsAssignableFrom(typeof(Triangle)));
-            //Assert.Equal(FILL_ME_IN, typeof(Shape).IsAssignableFrom(typeof(Triangle)));
+            Assert.Equal(FILL_ME_IN, typeof(Shape).IsAssignableFrom(typeof(Triangle)));
 
-			// The above means: whenever I need a Shape, I can use a Triangle
+            // The above means: whenever I need a Shape, I can use a Triangle
 
-            Assert.Equal(false, typeof(Triangle).IsAssignableFrom(typeof(Shape)));
-            //Assert.Equal(FILL_ME_IN, typeof(Triangle).IsAssignableFrom(typeof(Shape)));
+            Assert.Equal(FILL_ME_IN, typeof(Triangle).IsAssignableFrom(typeof(Shape)));
 
             try
             {
@@ -151,8 +137,7 @@ namespace DotNetKoans.CSharp
             }
             catch (Exception ex)
             {
-                Assert.True(ex is NotImplementedException);
-                //Assert.True(ex is FillMeInException);
+                Assert.True(ex is FillMeInException);
             }
         }
 
@@ -208,51 +193,45 @@ namespace DotNetKoans.CSharp
             }
         }
 
-		[Koan(5, DisplayName = "13.05 - A interface is a contract the class MUST fulfill")]
-		public void AnInterfaceIsAContractTheClassMustFulfill()
+        [Koan(5, DisplayName = "13.05 - A interface is a contract the class MUST fulfill")]
+        public void AnInterfaceIsAContractTheClassMustFulfill()
         {
             var redCup = new Cup("Red");
             var blueGlass = new Glass("Blue", "Plastic");
 
-            Assert.Equal("Cup: (Red)", redCup.Describe());
-            //Assert.Equal(FILL_ME_IN, redCup.Describe());
+            Assert.Equal(FILL_ME_IN, redCup.Describe());
 
-			Assert.Equal("Glass: (Blue, Plastic)", blueGlass.Describe());
-			//Assert.Equal(FILL_ME_IN, blueGlass.Describe());
+            Assert.Equal(FILL_ME_IN, blueGlass.Describe());
 
             // Since C# is strongly typed if a class is said to implement an interface but does not, compilation will fail
             // try commenting out the whole Describe method in Cup or Glass Classes
         }
 
-		[Koan(6, DisplayName = "13.06 - You can also check at rutime if an instance implements an interface")]
-		public void YouCanAlsoCheckAtRutimeIfAnInstanceImplementsAnInterface()
-		{
-			var rubberBall = new RubberBall();
-			var cup = new Cup("Red");
+        [Koan(6, DisplayName = "13.06 - You can also check at rutime if an instance implements an interface")]
+        public void YouCanAlsoCheckAtRutimeIfAnInstanceImplementsAnInterface()
+        {
+            var rubberBall = new RubberBall();
+            var cup = new Cup("Red");
 
-			Assert.Equal(false, rubberBall is IDescribable);
-			//Assert.Equal(FILL_ME_IN, rubberBall is IDescribable);
+            Assert.Equal(FILL_ME_IN, rubberBall is IDescribable);
 
-			Assert.Equal(true, cup is IDescribable);
-			//Assert.Equal(FILL_ME_IN, triange is IDescribable);
+            Assert.Equal(FILL_ME_IN, cup is IDescribable);
 
-			// Is you don't have an instance can also check the Types
+            // Is you don't have an instance can also check the Types
 
-			Assert.Equal(false, typeof(IDescribable).IsAssignableFrom(typeof(RubberBall)));
-			//Assert.Equal(FILL_ME_IN, typeof(IDescribable).IsAssignableFrom(typeof(RubberBall)));
+            Assert.Equal(FILL_ME_IN, typeof(IDescribable).IsAssignableFrom(typeof(RubberBall)));
 
-			Assert.Equal(true, typeof(IDescribable).IsAssignableFrom(typeof(Cup)));
-			//Assert.Equal(FILL_ME_IN, typeof(IDescribable).IsAssignableFrom(typeof(Cup)));
+            Assert.Equal(FILL_ME_IN, typeof(IDescribable).IsAssignableFrom(typeof(Cup)));
 
-			// Remember: "whenever I need an IDescribable I can use a Cup"
-		}
+            // Remember: "whenever I need an IDescribable I can use a Cup"
+        }
 
-		public class Rectangle : Shape, IDescribable
+        public class Rectangle : Shape, IDescribable
         {
             public Rectangle(double width, double height)
             {
                 Width = width;
-				Height = height;
+                Height = height;
                 Type = "Rectangle";
             }
 
@@ -320,8 +299,8 @@ namespace DotNetKoans.CSharp
             }
         }
 
-		[Koan(7, DisplayName = "13.07 - You can use interfaces to group otherwise unrelated items")]
-		public void YoCanUseInterfacesToGroupOtherwiseUnrelatedItems()
+        [Koan(7, DisplayName = "13.07 - You can use interfaces to group otherwise unrelated items")]
+        public void YoCanUseInterfacesToGroupOtherwiseUnrelatedItems()
         {
             var container = new Container();
 
@@ -329,26 +308,24 @@ namespace DotNetKoans.CSharp
             container.Items.Add(new Rectangle(5, 10));
             container.Items.Add(new TextContainer("Text content"));
 
-			string expected = $@"Container:{Environment.NewLine}1: Cup: (Red){Environment.NewLine}2: Rectangle: w=5; h=10{Environment.NewLine}3: TextContainer: ""Text content""{Environment.NewLine}";
-			//string expected = FILL_ME_IN as string;
+            string expected = FILL_ME_IN as string;
 
-			Assert.Equal(expected , container.Describe());
+            Assert.Equal(expected , container.Describe());
         }
 
         [Koan(8, DisplayName = "13.08 - You can use check types in linq queries")]
         public void YouCanCheckTypesInLinqQueries()
         {
-			var container = new Container();
+            var container = new Container();
 
-			container.Items.Add(new Cup("Red"));
-			container.Items.Add(new Rectangle(5, 10));
-			container.Items.Add(new Rectangle(5, 20));
-			container.Items.Add(new TextContainer("Text context"));
+            container.Items.Add(new Cup("Red"));
+            container.Items.Add(new Rectangle(5, 10));
+            container.Items.Add(new Rectangle(5, 20));
+            container.Items.Add(new TextContainer("Text context"));
 
-			var shapes = container.Items.Where(i => i is Shape).Select(i => i.Describe());
+            var shapes = container.Items.Where(i => i is Shape).Select(i => i.Describe());
 
-			Assert.Equal("Rectangle: w=5; h=10, Rectangle: w=5; h=20", String.Join(", ", shapes));
-			//Assert.Equal(FILL_ME_IN, String.Join(", ", shapes));
-		}
+            Assert.Equal(FILL_ME_IN, String.Join(", ", shapes));
+        }
     }
 }
