@@ -72,7 +72,6 @@
     <Compile Include="AboutAssignment.cs" />
     <Compile Include="AboutControlStatements.cs" />
     <Compile Include="AboutDelegates.cs" />
-    <Compile Include="AboutExpressions.cs" />
     <Compile Include="AboutGenericCollections.cs" />
     <Compile Include="AboutInheritance.cs" />
     <Compile Include="AboutAbstractClassesAndInterfaces.cs" />

@@ -19,7 +19,7 @@ namespace DotNetKoans.CSharp
 		public int Year { get; set; }
 	}
 
-	[Trait("Topic", "14 - About Linq")]
+	[Trait("Topic", "12 - About Linq")]
 	public class AboutLinq : Koan
 	{
 		private List<Movie> GetMovieList()
@@ -35,7 +35,7 @@ namespace DotNetKoans.CSharp
 			return list;
 		}
 
-		[Koan(1, DisplayName = "14.01 - Where method returns a filtered collection")]
+		[Koan(1, DisplayName = "12.01 - Where method returns a filtered collection")]
 		public void WhereMethodReturnsAFilteredCollection()
 		{
 			var movies = GetMovieList();
@@ -57,7 +57,7 @@ namespace DotNetKoans.CSharp
 			Assert.Equal(FILL_ME_IN, titles);
 		}
 
-		[Koan(2, DisplayName = "14.02 - Select method can return a collection of one property")]
+		[Koan(2, DisplayName = "12.02 - Select method can return a collection of one property")]
 		public void SelectMethodCanReturnACollectionOfOneProperty()
 		{
 			var movies = GetMovieList();
@@ -68,7 +68,7 @@ namespace DotNetKoans.CSharp
 			Assert.Equal(FILL_ME_IN, String.Join(",", dramaMovieTitles));
 		}
 
-		[Koan(3, DisplayName = "14.03 - Select method can return a collection of new objects")]
+		[Koan(3, DisplayName = "12.03 - Select method can return a collection of new objects")]
 		public void SelectMethodCanReturnACollectionOfNewObjects()
 		{
 			var movies = GetMovieList();
@@ -88,7 +88,7 @@ namespace DotNetKoans.CSharp
 			Assert.Equal(FILL_ME_IN, titles);
 		}
 
-		[Koan(4, DisplayName = "14.04 - Where method can receive several conditions")]
+		[Koan(4, DisplayName = "12.04 - Where method can receive several conditions")]
 		public void WhereMethodCanReceiveSeveralConditions()
 		{
 			var movies = GetMovieList();
@@ -98,7 +98,7 @@ namespace DotNetKoans.CSharp
 			Assert.Equal(FILL_ME_IN, dramaMovies.Count());
 		}
 
-		[Koan(5, DisplayName = "14.05 - Where methods can be chained")]
+		[Koan(5, DisplayName = "12.05 - Where methods can be chained")]
 		public void WhereMethodsCanBeChained()
 		{
 			var movies = GetMovieList();
@@ -108,7 +108,7 @@ namespace DotNetKoans.CSharp
 			Assert.Equal(FILL_ME_IN, dramaMovies.ToArray()[0].MovieTitle);
 		}
 
-		[Koan(6, DisplayName = "14.06 - FirstOrDefault method can return the first item")]
+		[Koan(6, DisplayName = "12.06 - FirstOrDefault method can return the first item")]
 		public void FirstOrDefaultMethodCanReturnTheFirstItem()
 		{
 			var movies = GetMovieList();
@@ -126,7 +126,7 @@ namespace DotNetKoans.CSharp
 			Assert.Equal(FILL_ME_IN, dramaMovie3.MovieTitle);
 		}
 
-		[Koan(7, DisplayName = "14.07 - SingleOrDefault method can return a single item")]
+		[Koan(7, DisplayName = "12.07 - SingleOrDefault method can return a single item")]
 		public void SingleOrDefaultMethodCanReturnASingleItem()
 		{
 			var movies = GetMovieList();
@@ -149,7 +149,7 @@ namespace DotNetKoans.CSharp
 			}
 		}
 
-		[Koan(8, DisplayName = "14.08 - Contains method can resolve subqueries")]
+		[Koan(8, DisplayName = "12.08 - Contains method can resolve subqueries")]
 		public void ContainsMethodsCanResolveSubQueries()
 		{
 			var movies = GetMovieList();
