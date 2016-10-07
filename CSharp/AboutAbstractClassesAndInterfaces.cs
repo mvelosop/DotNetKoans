@@ -217,7 +217,7 @@ namespace DotNetKoans.CSharp
 
             Assert.Equal(FILL_ME_IN, cup is IDescribable);
 
-            // Is you don't have an instance can also check the Types
+            // If you don't have an instance can also check the Types
 
             Assert.Equal(FILL_ME_IN, typeof(IDescribable).IsAssignableFrom(typeof(RubberBall)));
 
