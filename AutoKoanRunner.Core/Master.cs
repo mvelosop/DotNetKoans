@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -37,51 +39,73 @@ namespace AutoKoanRunner.Core
             {
                 return String.Empty;
             }
+
             if (a.CompletedKoans > 0 && a.FailedAttempts == 0)
             {
                 return string.Format("You are progressing. Excellent. {0} completed.", a.CompletedKoans);
             }
+
             if (a.FailedAttempts < 3)
             {
                 return "Do not lose hope.";
             }
+
             return "I sense frustration. Do not be afraid to ask for help.";
         }
         public static string[] WhereToSeek(string[] lines)
         {
+            File.WriteAllLines("c:\\temp\\DotNetKoans.txt", lines);
+
             string[] result = new string[] { };
+
             int damaged = Array.FindIndex(lines, l => l.Contains(kDamaged));
+
             if (damaged >= 0)
             {
                 int start = damaged + 1;
                 int end = Array.FindIndex(lines, start, l => l.TrimStart().StartsWith("at")) ;
+
                 result = new string[end - start];
+
                 Array.Copy(lines, start, result, 0, end - start);
             }
+
             return result;
         }
+
         public static string WhatToMeditateOn(string[] lines)
         {
-            return Array.Find(lines, l => l.TrimStart().StartsWith("at")).TrimStart();
+            return Array.Find(lines, l => l.TrimStart().StartsWith("at") && !l.Contains("KoanAssert")).TrimStart();
         }
+
         private static string FindKoan(string[] lines, string projectName, string action)
         {
             int lastPassingOffset = Array.FindLastIndex(lines, l => l.Contains(action));
+
             if (lastPassingOffset < 0)
                 return String.Empty;
+
             string passing = lines[lastPassingOffset];
+
             int start = passing.IndexOf(projectName);
+
+            start = start == -1 ? 0 : start;
+
             int end = passing.IndexOf(action);
+
             return passing.Substring(start, end - start - 1);
         }
+
         private static int CountCompleted(string[] lines)
         {
             return Array.FindAll(lines, l => l.Contains(kExpanded)).Length;
         }
+
         private static int ComputeAttempts(string failedKoan, Analysis prior)
         {
             return failedKoan == prior.FailedKoan ? prior.FailedAttempts + 1 : 0;
         }
+
         private static string ComputeProgress(string[] lines, out int total)
         {
             int totalCompleted = 0;

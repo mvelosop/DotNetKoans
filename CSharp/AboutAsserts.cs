@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-using Assert = Xunit.KoanHelpers.KoanAssert;
+//using Assert = Xunit.KoanHelpers.KoanAssert;
 
 namespace DotNetKoans.CSharp
 {
@@ -11,21 +11,21 @@ namespace DotNetKoans.CSharp
         [Koan(1, DisplayName = "01.01 - Assert truth")]
         public void AssertTruth() 
         {
-            Assert.True(false); //This should be true
+            Assert.True(true); //This should be true
         }
 
         //Enlightenment may be more easily achieved with appropriate messages
         [Koan(2, DisplayName = "01.02 - Assert truth with message")]
         public void AssertTruthWithMessage() 
         {
-            Assert.True(false, "This should be true -- Please fix this");
+            Assert.True(true, "This should be true -- Please fix this");
         }
 
         //To understand reality, we must compare our expectations against reality
         [Koan(3, DisplayName = "01.03 - Assert equality")]
         public void AssertEquality() 
         {
-            var expectedValue = 3;
+            var expectedValue = 2;
             var actualValue = 1 + 1;
 
             Assert.True(expectedValue == actualValue);
