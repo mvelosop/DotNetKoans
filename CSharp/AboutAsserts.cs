@@ -1,7 +1,5 @@
 ﻿using Xunit;
 
-using Assert = Xunit.KoanHelpers.KoanAssert;
-
 namespace DotNetKoans.CSharp
 {
     [Trait("Topic", "01 - About Asserts")]
@@ -42,7 +40,7 @@ namespace DotNetKoans.CSharp
         }
 
         //Sometimes we will ask you to fill in the values
-        [Koan(5, DisplayName = "01.05 - Yo will have to fill in values sometimes")]
+        [Koan(5, DisplayName = "01.05 - You will have to fill in values sometimes")]
         public void FillInValues() 
         {
             Assert.Equal(FILL_ME_IN, 1 + 1);

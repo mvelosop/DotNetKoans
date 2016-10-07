@@ -1,8 +1,6 @@
 using System;
 using Xunit;
 
-using Assert = Xunit.KoanHelpers.KoanAssert;
-
 namespace DotNetKoans.CSharp
 {
     [Trait("Topic", @"02 - About ""null""")]
