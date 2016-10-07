@@ -9,6 +9,7 @@
                 return new string[] {
                 "DotNetKoans.CSharp.AboutAsserts",
                 "DotNetKoans.CSharp.AboutNull",
+                "DotNetKoans.CSharp.AboutClassesObjectsAndTypes",
                 "DotNetKoans.CSharp.AboutArrays",
                 "DotNetKoans.CSharp.AboutGenericCollections",
                 "DotNetKoans.CSharp.AboutAssignment",
@@ -17,7 +18,9 @@
                 "DotNetKoans.CSharp.AboutMethods",
                 "DotNetKoans.CSharp.AboutControlStatements",
                 "DotNetKoans.CSharp.AboutDelegates",
-                "DotNetKoans.CSharp.AboutLambdas"
+                "DotNetKoans.CSharp.AboutLambdas",
+                "DotNetKoans.CSharp.AboutLinq",
+                "DotNetKoans.CSharp.AboutAbstractTypes"
                 };
             }
         }
