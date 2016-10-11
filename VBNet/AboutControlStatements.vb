@@ -1,15 +1,16 @@
 Imports Xunit
 
+<Trait("Language", "VB")>
 Public Class AboutControlStatements
     Inherits Koan
-    <Koan(1)> _
+    <Koan(1)>
     Public Sub SingleLineIfThenStatements()
         Dim b As Boolean = False
         If True Then b = True
         Assert.Equal(FILL_ME_IN, b)
     End Sub
 
-    <Koan(2)> _
+    <Koan(2)>
     Public Sub MultiLineIfStatements()
         Dim b As Boolean = False
         If True Then
@@ -18,14 +19,14 @@ Public Class AboutControlStatements
         Assert.Equal(FILL_ME_IN, b)
     End Sub
 
-    <Koan(3)> _
+    <Koan(3)>
     Public Sub SingleLineIfThenElse()
         Dim b As Boolean
         If True Then b = True Else b = False
         Assert.Equal(FILL_ME_IN, b)
     End Sub
 
-    <Koan(4)> _
+    <Koan(4)>
     Public Sub MultiLineIfThenElseStatement()
         Dim b As Boolean
         If True Then
@@ -37,14 +38,14 @@ Public Class AboutControlStatements
     End Sub
 
 
-    <Koan(5)> _
+    <Koan(5)>
     Public Sub TernaryOperators()
         Assert.Equal(FILL_ME_IN, (If(True, 1, 0)))
         Assert.Equal(FILL_ME_IN, (If(False, 1, 0)))
     End Sub
 
     'This is out of place for control statements, but necessary for Koan 8
-    <Koan(6)> _
+    <Koan(6)>
     Public Sub NullableTypes()
         Dim i As Integer = 0
         'i = null; //You can't do this
@@ -53,7 +54,7 @@ Public Class AboutControlStatements
         Assert.Null(FILL_ME_IN)
     End Sub
 
-    <Koan(7)> _
+    <Koan(7)>
     Public Sub AlternateNullableTypesSyntax()
         Dim i As Integer = 0
         Dim nullableInt As Nullable(Of Integer) = Nothing 'but you can do this
@@ -61,14 +62,14 @@ Public Class AboutControlStatements
         Assert.Null(FILL_ME_IN)
     End Sub
 
-    <Koan(8)> _
+    <Koan(8)>
     Public Sub AssignIfNullOperator()
         Dim nullableInt As Integer? = Nothing
         Dim x As Integer = If(nullableInt, 42)
         Assert.Equal(FILL_ME_IN, x)
     End Sub
 
-    <Koan(9)> _
+    <Koan(9)>
     Public Sub IsOperators()
         Dim isKoan As Boolean = False
         Dim isAboutControlStatements As Boolean = False
@@ -92,7 +93,7 @@ Public Class AboutControlStatements
         Assert.Equal(FILL_ME_IN, isAboutMethods)
     End Sub
 
-    <Koan(10)> _
+    <Koan(10)>
     Public Sub WhileStatement()
         Dim i As Integer = 1
         Dim result As Integer = 1
@@ -103,7 +104,7 @@ Public Class AboutControlStatements
         Assert.Equal(FILL_ME_IN, result)
     End Sub
 
-    <Koan(11)> _
+    <Koan(11)>
     Public Sub BreakStatement()
         Dim i As Integer = 1
         Dim result As Integer = 1
@@ -117,7 +118,7 @@ Public Class AboutControlStatements
         Assert.Equal(FILL_ME_IN, result)
     End Sub
 
-    <Koan(12)> _
+    <Koan(12)>
     Public Sub ContinueStatement()
         Dim i As Integer = 0
         Dim result = New List(Of Integer)()
@@ -131,29 +132,29 @@ Public Class AboutControlStatements
         Assert.Equal(FILL_ME_IN, result)
     End Sub
 
-    <Koan(13)> _
+    <Koan(13)>
     Public Sub ForStatement()
         Dim list = New List(Of String)({"fish", "and", "chips"})
         Dim i As Integer = 0
-        While i < List.Count
-            List(i) = (List(i).ToUpper())
+        While i < list.Count
+            list(i) = (list(i).ToUpper())
             i += 1
         End While
-        Assert.Equal(FILL_ME_IN, List)
+        Assert.Equal(FILL_ME_IN, list)
     End Sub
 
-    <Koan(14)> _
+    <Koan(14)>
     Public Sub ForEachStatement()
         Dim list = New List(Of String)({"fish", "and", "chips"})
         Dim finalList = New List(Of String)()
-        For Each item As String In List
+        For Each item As String In list
             finalList.Add(item.ToUpper())
         Next
-        Assert.Equal(FILL_ME_IN, List)
+        Assert.Equal(FILL_ME_IN, list)
         Assert.Equal(FILL_ME_IN, finalList)
     End Sub
 
-    <Koan(15)> _
+    <Koan(15)>
     Public Sub ModifyingACollectionDuringForEach()
         Dim list = New List(Of String)({"fish", "and", "chips"})
         Try
@@ -165,7 +166,7 @@ Public Class AboutControlStatements
         End Try
     End Sub
 
-    <Koan(16)> _
+    <Koan(16)>
     Public Sub CatchingModificationExceptions()
         Dim whoCaughtTheException As String = "No one"
         Dim list = New List(Of String)({"fish", "and", "chips"})

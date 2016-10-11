@@ -5,7 +5,8 @@ using Xunit;
 
 namespace DotNetKoans.CSharp
 {
-    [Trait("Topic", "12 - About Lambdas")]
+    [Trait("Language", "C#")]
+    [Trait("Topic", "C#-12 - About Lambdas")]
     public class AboutLambdas : Koan
     {
         [Koan(1, DisplayName = "12.01 - Using anonymous methods")]

@@ -6,7 +6,8 @@ using System.Linq;
 
 namespace DotNetKoans.CSharp
 {
-    [Trait("Topic", "06 - About Assignment")]
+    [Trait("Language", "C#")]
+    [Trait("Topic", "C#-06 - About Assignment")]
     public class AboutAssignment : Koan
     {
         //Parallel Assignments are a feature in Ruby which allow one

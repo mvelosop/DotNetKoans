@@ -4,7 +4,8 @@ using Xunit;
 
 namespace DotNetKoans.CSharp
 {
-    [Trait("Topic", "10 - About Control Statements")]
+    [Trait("Language", "C#")]
+    [Trait("Topic", "C#-10 - About Control Statements")]
     public class AboutControlStatements : Koan
     {
         [Koan(1, DisplayName = "10.01 - If then else statements with brackets")]

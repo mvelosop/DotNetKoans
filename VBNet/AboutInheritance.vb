@@ -1,5 +1,6 @@
 Imports Xunit
 
+<Trait("Language", "VB")>
 Public Class AboutInheritance
     Inherits Koan
     Public Class Dog
@@ -48,23 +49,23 @@ Public Class AboutInheritance
         End Function
     End Class
 
-    <Koan(1)> _
+    <Koan(1)>
     Public Sub SubclassesHaveTheParentAsAnAncestor()
         Assert.True(GetType(FillMeIn).IsAssignableFrom(GetType(Chihuahua)))
     End Sub
 
-    <Koan(2)> _
+    <Koan(2)>
     Public Sub AllClassesUltimatelyInheritFromAnObject()
         Assert.True(GetType(FillMeIn).IsAssignableFrom(GetType(Chihuahua)))
     End Sub
 
-    <Koan(3)> _
+    <Koan(3)>
     Public Sub SubclassesInheritBehaviorFromParentClass()
         Dim chico = New Chihuahua("Chico")
         Assert.Equal(FILL_ME_IN, chico.Name)
     End Sub
 
-    <Koan(4)> _
+    <Koan(4)>
     Public Sub SubclassesAddNewBehavior()
         Dim chico = New Chihuahua("Chico")
         Assert.Equal(FILL_ME_IN, chico.Wag())
@@ -77,7 +78,7 @@ Public Class AboutInheritance
         Assert.Null(dog.GetType().GetMethod("Wag"))
     End Sub
 
-    <Koan(5)> _
+    <Koan(5)>
     Public Sub SubclassesCanModifyExistingBehavior()
         Dim chico = New Chihuahua("Chico")
         Assert.Equal(FILL_ME_IN, chico.Bark())
@@ -105,13 +106,13 @@ Public Class AboutInheritance
         End Function
     End Class
 
-    <Koan(6)> _
+    <Koan(6)>
     Public Sub SubclassesCanRedefineBehaviorThatIsNotVirtual()
         Dim suzie As ReallyYippyChihuahua = New ReallyYippyChihuahua("Suzie")
         Assert.Equal(FILL_ME_IN, suzie.Wag())
     End Sub
 
-    <Koan(7)> _
+    <Koan(7)>
     Public Sub NewingAMethodDoesNotChangeTheBaseBehavior()
         'This is vital to understand. In Koan 6, you saw that the Wag
         'method did what we defined in our class. But what happens
@@ -135,7 +136,7 @@ Public Class AboutInheritance
         End Function
     End Class
 
-    <Koan(8)> _
+    <Koan(8)>
     Public Sub SubclassesCanInvokeParentBehaviorUsingBase()
         Dim ralph = New BullDog("Ralph")
         Assert.Equal(FILL_ME_IN, ralph.Bark())
@@ -153,7 +154,7 @@ Public Class AboutInheritance
         End Function
     End Class
 
-    <Koan(9)> _
+    <Koan(9)>
     Public Sub YouCanCallBaseEvenFromOtherMethods()
         Dim george = New BullDog("George")
         Assert.Equal(FILL_ME_IN, george.Bark())

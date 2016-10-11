@@ -2,7 +2,8 @@ using Xunit;
 
 namespace DotNetKoans.CSharp
 {
-    [Trait("Topic", "08 - About Inheritance")]
+    [Trait("Language", "C#")]
+    [Trait("Topic", "C#-08 - About Inheritance")]
     public class AboutInheritance : Koan
     {
         public class Dog

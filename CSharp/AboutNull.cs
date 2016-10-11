@@ -3,7 +3,8 @@ using Xunit;
 
 namespace DotNetKoans.CSharp
 {
-    [Trait("Topic", @"02 - About ""null""")]
+    [Trait("Language", "C#")]
+    [Trait("Topic", @"C#-02 - About ""null""")]
     public class AboutNull : Koan
     {
         [Koan(1, DisplayName = @"02.01 - ""null"" is not an object")]

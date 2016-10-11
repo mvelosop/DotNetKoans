@@ -1,13 +1,14 @@
 Imports Xunit
 
+<Trait("Language", "VB")>
 Public Class AboutNothing
     Inherits Koan
-    <Koan(1)> _
+    <Koan(1)>
     Public Sub NilIsNotAnObject()
         Assert.True(GetType(Object).IsAssignableFrom(Nothing)) 'not everything is an object
     End Sub
 
-    <Koan(2)> _
+    <Koan(2)>
     Public Sub YouGetNullPointerErrorsWhenCallingMethodsOnNil()
         'What is the Exception that is thrown when you call a method on a null object?
         'Don't be confused by the code below. It is using Anonymous Delegates which we will
@@ -23,19 +24,19 @@ Public Class AboutNothing
         End Try
     End Sub
 
-    <Koan(3)> _
+    <Koan(3)>
     Public Sub CheckingThatAnObjectIsNull()
         Dim obj As Object = Nothing
         Assert.True(obj = FILL_ME_IN)
     End Sub
 
-    <Koan(4)> _
+    <Koan(4)>
     Public Sub ABetterWayToCheckThatAnObjectIsNull()
         Dim obj As Object = Nothing
         Assert.Null(FILL_ME_IN)
     End Sub
 
-    <Koan(5)> _
+    <Koan(5)>
     Public Sub AWayNotToCheckThatAnObjectIsNull()
         Dim obj As Object = Nothing
         Assert.True(obj.Equals(Nothing))

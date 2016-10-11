@@ -7,7 +7,8 @@ using Xunit;
 
 namespace DotNetKoans.CSharp
 {
-    [Trait("Topic", "14 - About Abstract Types")]
+    [Trait("Language", "C#")]
+    [Trait("Topic", "C#-14 - About Abstract Types")]
     public class AboutAbstractTypes : Koan
     {
         public abstract class Shape

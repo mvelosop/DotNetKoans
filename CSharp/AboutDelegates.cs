@@ -6,7 +6,8 @@ using System.Text;
 
 namespace DotNetKoans.CSharp
 {
-    [Trait("Topic", "11 - About Delegates")]
+    [Trait("Language", "C#")]
+    [Trait("Topic", "C#-11 - About Delegates")]
     public class AboutDelegates : Koan
     {
         //A delegate is a user defined type just like a class. 

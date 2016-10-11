@@ -4,6 +4,7 @@ Imports System.Collections.Generic
 Imports Xunit
 Imports System.Linq
 
+<Trait("Language", "VB")>
 Public Class AboutArrayAssignment
     Inherits Koan
     'Parallel Assignments are a feature in Ruby which allow one

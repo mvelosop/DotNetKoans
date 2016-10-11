@@ -2,7 +2,8 @@
 
 namespace DotNetKoans.CSharp
 {
-    [Trait("Topic", "01 - About Asserts")]
+    [Trait("Language", "C#")]
+    [Trait("Topic", "C#-01 - About Asserts")]
     public class AboutAsserts : Koan
     {
         //We shall contemplate truth by testing reality, via asserts.

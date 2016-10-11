@@ -1,5 +1,6 @@
 Imports Xunit
 
+<Trait("Language", "VB")>
 Public Class AboutMethods
     Inherits Koan
     'Extension Methods allow us to "add" methods to any class
@@ -8,17 +9,17 @@ Public Class AboutMethods
     'ExtensionMethods class and the AboutMethods class are in the
     'DotNetKoans.CSharp namespace, AboutMethods can automatically
     'find them
-    <Koan(1)> _
+    <Koan(1)>
     Public Sub ExtensionMethodsShowUpInTheCurrentClass()
         Assert.Equal(FILL_ME_IN, Me.HelloWorld())
     End Sub
 
-    <Koan(2)> _
+    <Koan(2)>
     Public Sub ExtensionMethodsWithParameters()
         Assert.Equal(FILL_ME_IN, Me.SayHello("Cory"))
     End Sub
 
-    <Koan(3)> _
+    <Koan(3)>
     Public Sub ExtensionMethodsWithVariableParameters()
         Assert.Equal(FILL_ME_IN, Me.MethodWithVariableArguments("Cory", "Will", "Corey"))
     End Sub
@@ -26,7 +27,7 @@ Public Class AboutMethods
     'Extension methods can extend any class my referencing 
     'the name of the class they are extending. For example, 
     'we can "extend" the string class like so:
-    <Koan(4)> _
+    <Koan(4)>
     Public Sub ExtendingCoreClasses()
         Assert.Equal(FILL_ME_IN, "Cory".SayHi())
     End Sub
@@ -37,14 +38,14 @@ Public Class AboutMethods
         Return names
     End Function
 
-    <Koan(5)> _
+    <Koan(5)>
     Public Sub LocalMethodsWithVariableParams()
         Assert.Equal(FILL_ME_IN, Me.LocalMethodWithVariableParameters("Cory", "Will", "Corey"))
     End Sub
 
     'Note how we called the method by saying "this.LocalMethodWithVariableParameters"
     'That isn't necessary for local methods
-    <Koan(6)> _
+    <Koan(6)>
     Public Sub LocalMethodsWithoutExplicitReceiver()
         Assert.Equal(FILL_ME_IN, LocalMethodWithVariableParameters("Cory", "Will", "Corey"))
     End Sub
@@ -80,7 +81,7 @@ Public Class AboutMethods
 
     'Static methods don't require an instance of the object
     'in order to be called. 
-    <Koan(7)> _
+    <Koan(7)>
     Public Sub CallingStaticMethodsWithoutAnInstance()
         Assert.Equal(FILL_ME_IN, InnerSecret.Key())
     End Sub
@@ -89,7 +90,7 @@ Public Class AboutMethods
     'of the object. So this wouldn't compile:
     'InnerSecret secret = new InnerSecret();
     'Assert.Equal(FILL_ME_IN, secret.Key());
-    <Koan(8)> _
+    <Koan(8)>
     Public Sub CallingPublicMethodsOnAnInstance()
         Dim secret As InnerSecret = New InnerSecret()
         Assert.Equal(FILL_ME_IN, secret.Secret())
@@ -99,7 +100,7 @@ Public Class AboutMethods
     'We're going to call the public method called
     'InformationLeak of the StateSecret class which returns
     'the value from the protected method SuperSecret
-    <Koan(9)> _
+    <Koan(9)>
     Public Sub CallingProtectedMethodsOnAnInstance()
         Dim secret As StateSecret = New StateSecret()
         Assert.Equal(FILL_ME_IN, secret.InformationLeak())
@@ -111,7 +112,7 @@ Public Class AboutMethods
     'Ok, well, that isn't entirely true. Reflection can get
     'you just about anything, and though it's way out of scope
     'for this...
-    <Koan(10)> _
+    <Koan(10)>
     Public Sub SubvertPrivateMethods()
         Dim secret As InnerSecret = New InnerSecret()
         Dim superSecretMessage As String = IIf(TypeOf secret.GetType().GetMethod("SooperSeekrit", System.Reflection.BindingFlags.NonPublic Or System.Reflection.BindingFlags.Instance).Invoke(secret, Nothing) Is String, CType(secret.GetType().GetMethod("SooperSeekrit", System.Reflection.BindingFlags.NonPublic Or System.Reflection.BindingFlags.Instance).Invoke(secret, Nothing), String), Nothing)
@@ -126,7 +127,7 @@ Public Class AboutMethods
         Return p1
     End Function
 
-    <Koan(11)> _
+    <Koan(11)>
     Public Sub CallingGenericMethods()
         Assert.Equal(GetType(FillMeIn), GiveMeBack(Of Integer)(1).GetType())
         Assert.Equal(FILL_ME_IN, GiveMeBack(Of String)("Hi!"))

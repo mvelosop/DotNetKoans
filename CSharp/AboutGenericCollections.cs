@@ -6,7 +6,8 @@ using System.Linq;
 
 namespace DotNetKoans.CSharp
 {
-    [Trait("Topic", "05 - About Generic Collections")]
+    [Trait("Language", "C#")]
+    [Trait("Topic", "C#-05 - About Generic Collections")]
     public class AboutGenericCollections : Koan
     {
         [Koan(1, DisplayName = "05.01 - Array list size is dynamic")]

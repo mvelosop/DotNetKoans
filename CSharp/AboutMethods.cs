@@ -28,7 +28,8 @@ namespace DotNetKoans.CSharp
         }
     }
 
-    [Trait("Topic", "09 - About Methods")]
+    [Trait("Language", "C#")]
+    [Trait("Topic", "C#-09 - About Methods")]
     public class AboutMethods : Koan
     {
 

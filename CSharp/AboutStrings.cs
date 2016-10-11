@@ -7,7 +7,8 @@ using System.Linq;
 
 namespace DotNetKoans.CSharp
 {
-    [Trait("Topic", "07 - About Strings")]
+    [Trait("Language", "C#")]
+    [Trait("Topic", "C#-07 - About Strings")]
     public class AboutStrings : Koan
     {
         //Note: This is one of the longest katas and, perhaps, one

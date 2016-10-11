@@ -6,7 +6,8 @@ using System.Linq;
 
 namespace DotNetKoans.CSharp
 {
-    [Trait("Topic", "04 - About Arrays")]
+    [Trait("Language", "C#")]
+    [Trait("Topic", "C#-04 - About Arrays")]
     public class AboutArrays : Koan
     {
         [Koan(1, DisplayName = "04.01 - Creating arrays")]

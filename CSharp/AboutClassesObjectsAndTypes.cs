@@ -7,11 +7,14 @@ using Xunit;
 
 namespace DotNetKoans.CSharp
 {
-    [Trait("Topic", "03 - About Classes, Objects and Types")]
+    [Trait("Language", "C#")]
+    [Trait("Topic", "C#-03 - About Classes, Objects and Types")]
     public class AboutClassesObjectsAndTypes : Koan
     {
         public class RubberBall
         {
+            // This class only has the default constructor, hence, no need to code it.
+
             public string Color { get; set; }
         }
 
