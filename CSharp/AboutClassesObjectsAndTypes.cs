@@ -106,12 +106,17 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, redBall.Material);
         }
 
+        // A brief introduction to inheritance, more on AboutIneritance (Topic 8)
+
+        // This means a SportBall inherits from Ball, so it has the properties from Ball plus its own "Sport"
         public class SportBall : Ball
         {
             public string Sport { get; set; }
         }
 
-        [Koan(4, DisplayName = "There are several ways to check types")]
+        // Also, a SportBall is always a Ball, but not all Balls are SportBalls
+
+        [Koan(4, DisplayName = "03.04 - There are several ways to check types")]
         public void ThereAreSeveralWaysToCheckTypes()
         {
             var tennisBall = new SportBall { Color = "Yellow", Material = "Compressed air, Rubber", Sport = "Tennis" };
