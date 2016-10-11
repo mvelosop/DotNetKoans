@@ -22,6 +22,8 @@ namespace DotNetKoans.CSharp
         public void ClassesObjectsAndInstances()
         {
             // A class is like a mold and instances are each individual object created from the mold 
+            // The constructor creates a new instance of any class
+
             var redBall = new RubberBall { Color = "Red" };
             var blueBall = new RubberBall { Color = "Dark Blue" };
 
@@ -40,7 +42,10 @@ namespace DotNetKoans.CSharp
         {
             var rubberBall = new RubberBall();
 
+            // Use typeof to get Type info for a Class
             Type rubberBallTypeFromClass = typeof(RubberBall);
+
+            // Use .GetType() to get Type info for an instance
             Type rubberBallTypeFromInstance = rubberBall.GetType();
 
             Assert.Equal(FILL_ME_IN, rubberBallTypeFromClass.Name);
@@ -59,11 +64,16 @@ namespace DotNetKoans.CSharp
 
         public class Ball
         {
+            // If you need a default constructor and also have special ones, you MUST code the DEFAULT CONSTRUCTOR, or else...
+            // it will not exist.
+
             public Ball() // This is THE DEFAULT CONSTRUCTOR, without parameters
             {
                 Color = "invisible";
                 Material = "none (virtual)";
             }
+
+            // Try commenting out the default constructor
 
             public Ball(string color)
             {
@@ -77,9 +87,9 @@ namespace DotNetKoans.CSharp
                 Material = material;
             }
 
-            public string Color { get; private set; }
+            public string Color { get; set; }
 
-            public string Material { get; private set; }
+            public string Material { get; set; }
         }
 
         [Koan(3, DisplayName = "03.03 - Classes can have several constructors to simplify object creation")]
@@ -96,5 +106,43 @@ namespace DotNetKoans.CSharp
             Assert.Equal(FILL_ME_IN, redBall.Material);
         }
 
+        public class SportBall : Ball
+        {
+            public string Sport { get; set; }
+        }
+
+        [Koan(4, DisplayName = "There are several ways to check types")]
+        public void ThereAreSeveralWaysToCheckTypes()
+        {
+            var tennisBall = new SportBall { Color = "Yellow", Material = "Compressed air, Rubber", Sport = "Tennis" };
+            var rubberBall = new RubberBall { Color = "Red" };
+            var demolitionBall = new Ball("Black", "Iron");
+
+            Assert.Equal(FILL_ME_IN, tennisBall is SportBall);
+
+            Assert.Equal(FILL_ME_IN, tennisBall is Ball);
+
+            Assert.Equal(FILL_ME_IN, tennisBall is RubberBall);
+
+            Assert.Equal(FILL_ME_IN, rubberBall is RubberBall);
+
+            Assert.Equal(FILL_ME_IN, rubberBall is Ball);
+
+            Assert.Equal(FILL_ME_IN, demolitionBall.GetType() == typeof(Ball));
+
+            Assert.Equal(FILL_ME_IN, rubberBall.GetType() == typeof(Ball));
+
+            Assert.Equal(FILL_ME_IN, tennisBall.GetType() == typeof(SportBall));
+
+            Assert.Equal(FILL_ME_IN, typeof(SportBall).IsAssignableFrom(tennisBall.GetType()));
+
+            Assert.Equal(FILL_ME_IN, typeof(Ball).IsAssignableFrom(tennisBall.GetType()));
+
+            Assert.Equal(FILL_ME_IN, typeof(SportBall).IsAssignableFrom(demolitionBall.GetType()));
+
+            Assert.Equal(FILL_ME_IN, typeof(Ball).IsAssignableFrom(typeof(SportBall)));
+
+            Assert.Equal(FILL_ME_IN, typeof(SportBall).IsAssignableFrom(typeof(Ball)));
+        }
     }
 }
